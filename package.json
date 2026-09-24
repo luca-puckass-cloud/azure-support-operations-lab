@@ -1,0 +1,14 @@
+{
+  "name": "azure-support-operations-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A hands-on Azure cloud support and operations lab.",
+  "scripts": {
+    "preview": "node scripts/preview-server.mjs",
+    "validate": "node scripts/validate-site.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

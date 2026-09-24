@@ -10,6 +10,10 @@
   --primary-dark: #0759b8;
   --success: #18794e;
   --success-background: #eaf7f0;
+  --warning: #946200;
+  --warning-background: #fff5d6;
+  --danger: #b42318;
+  --danger-background: #fff0ee;
   --planned: #5d6878;
   --planned-background: #eef1f4;
   --header: #111827;
@@ -226,6 +230,12 @@ button:hover {
   background: var(--primary-dark);
 }
 
+button:disabled {
+  border-color: #9aa5b4;
+  background: #9aa5b4;
+  cursor: wait;
+}
+
 button:focus-visible,
 a:focus-visible {
   outline: 3px solid rgba(9, 105, 218, 0.3);
@@ -269,11 +279,31 @@ a:focus-visible {
   font-weight: 750;
 }
 
+.overall-status.is-degraded {
+  border-color: #ecd388;
+  background: var(--warning-background);
+  color: var(--warning);
+}
+
+.overall-status.is-unavailable {
+  border-color: #f1b8b2;
+  background: var(--danger-background);
+  color: var(--danger);
+}
+
 .status-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--success);
+}
+
+.overall-status.is-degraded .status-dot {
+  background: var(--warning);
+}
+
+.overall-status.is-unavailable .status-dot {
+  background: var(--danger);
 }
 
 /* Service status */
@@ -323,6 +353,16 @@ a:focus-visible {
 .state-planned {
   background: var(--planned-background);
   color: var(--planned);
+}
+
+.state-degraded {
+  background: var(--warning-background);
+  color: var(--warning);
+}
+
+.state-unavailable {
+  background: var(--danger-background);
+  color: var(--danger);
 }
 
 .service-note {

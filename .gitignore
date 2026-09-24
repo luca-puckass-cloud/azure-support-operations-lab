@@ -1,0 +1,9 @@
+node_modules/
+local.settings.json
+.env
+.env.*
+.swa/
+coverage/
+.DS_Store
+Thumbs.db
+
