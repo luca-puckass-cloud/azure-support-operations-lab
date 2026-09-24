@@ -1,93 +1,141 @@
 # Azure Support Operations Lab
 
-> **Status:** Planning and initial setup
+> **Current status:** Local implementation complete · Azure deployment pending
 
-A hands-on cloud support project that demonstrates how a small customer-facing service can be deployed, monitored, secured and troubleshot in Microsoft Azure.
+A hands-on cloud support project built around a small customer-facing status portal. The lab demonstrates deployment, health checks, automated validation, access-control planning, cost awareness and structured incident response in Microsoft Azure.
 
-The project is designed around a realistic support scenario rather than a purely theoretical certification lab. It will document both the working solution and the incidents encountered while building and operating it.
+The application code is intentionally small. The main focus is the operational lifecycle: identify a symptom, collect evidence, isolate the affected component, apply a safe correction, verify recovery and document prevention.
 
-## Project goals
+## Current capabilities
 
-- Deploy a customer support and service-status portal with Azure Static Web Apps.
-- Use GitHub Actions for repeatable automated deployments.
-- Apply clear resource naming, tagging, access control and cost guardrails.
-- Add a lightweight health endpoint and basic monitoring.
-- Simulate common failures and document the complete troubleshooting process.
-- Recreate the Azure resources with Bicep infrastructure as code.
-- Produce support documentation that can be understood by both users and technical teams.
+| Capability | State |
+|---|---|
+| Responsive support operations portal | Implemented locally |
+| Browser-based health check with timeout and failure states | Implemented locally |
+| Managed Azure Functions health API | Implemented locally |
+| Automated repository validation and tests | Implemented locally |
+| Security headers for Azure Static Web Apps | Configured locally |
+| Free-tier Bicep resource definition | Implemented, not deployed |
+| Azure Static Web Apps deployment | Pending |
+| Application Insights monitoring | Optional; cost review pending |
+| Three controlled incident exercises | Prepared, not yet performed |
 
-## Planned architecture
+## Architecture
 
 ```mermaid
 flowchart LR
-    U[Customer or support agent] --> SWA[Azure Static Web Apps]
-    SWA --> API[Managed health API]
-    GH[GitHub repository] --> GA[GitHub Actions]
-    GA --> SWA
-    SWA --> MON[Azure Monitor]
-    API --> MON
+    User[Browser] --> SWA[Azure Static Web Apps]
+    SWA --> Frontend[Static support portal]
+    Frontend -->|GET /api/health| API[Managed Azure Function]
+    Repo[GitHub] --> Validation[GitHub Actions validation]
+    Repo --> Deployment[Azure deployment workflow]
+    Deployment --> SWA
+    API -. optional telemetry .-> Monitor[Application Insights]
 ```
 
-## Planned technology
+The frontend treats a direct local file preview differently from an Azure failure. Locally it reports that the API is not running. After deployment, it calls `/api/health` with a five-second timeout and shows operational or degraded state based on the response.
 
-- Microsoft Azure
-- Azure Static Web Apps Free plan
-- Azure Functions for a minimal health endpoint
-- Azure Monitor and alerting
-- Azure RBAC, tags and cost management
-- GitHub and GitHub Actions
-- Bicep infrastructure as code
-- HTML, CSS and JavaScript
+See [Architecture](docs/architecture.md) for responsibilities, request flow and trust boundaries.
 
-## Support and incident scenarios
+## Repository structure
 
-The finished lab will include evidence-based incident reports for:
+```text
+.
+├── .github/workflows/validate.yml
+├── api/
+│   ├── src/functions/health.js
+│   ├── test/health.test.js
+│   ├── host.json
+│   └── package.json
+├── docs/
+│   ├── incidents/
+│   ├── architecture.md
+│   ├── deployment-guide.md
+│   ├── learning-notes.md
+│   ├── security-and-cost-checklist.md
+│   └── troubleshooting-runbook.md
+├── infrastructure/
+│   └── main.bicep
+├── scripts/validate-site.mjs
+├── tests/site.test.mjs
+└── website/
+    ├── index.html
+    ├── script.js
+    ├── staticwebapp.config.json
+    └── styles.css
+```
 
-1. A failed deployment caused by an invalid configuration.
-2. An access-denied problem caused by insufficient permissions.
-3. An unavailable or unhealthy service endpoint.
+## Local validation
 
-Each report will describe the customer impact, symptoms, investigation, root cause, resolution and prevention measures.
+The repository uses only Node's built-in test runner for the frontend checks. The Azure Functions API has one production dependency: `@azure/functions`.
+
+```bash
+npm run validate
+npm test
+cd api
+npm install
+npm test
+```
+
+For a local browser preview with a simulated health endpoint, run `npm run preview`
+from the repository root and open `http://127.0.0.1:4173`.
+
+The full frontend and API can later be run together with the Azure Static Web Apps CLI. A direct `index.html` preview remains useful for layout review but does not start the managed API.
+
+## Deployment plan
+
+The first Azure deployment will use the portal so that the repository connection, generated workflow and secret storage are visible and auditable. Planned build settings:
+
+| Setting | Value |
+|---|---|
+| Plan | Free |
+| App location | `/website` |
+| API location | `/api` |
+| Output location | empty |
+| Deployment branch | `main` |
+
+See the complete [Deployment guide](docs/deployment-guide.md).
+
+## Security and cost guardrails
+
+- No secrets, customer data or employer-internal information are stored in the repository.
+- The health endpoint returns only service status, version, timestamp and its own runtime check.
+- Security headers restrict scripts, styles, network connections, framing and browser permissions.
+- The infrastructure template uses the Azure Static Web Apps Free SKU.
+- Virtual machines, paid databases, Front Door and Microsoft Sentinel are excluded.
+- Application Insights remains optional until its independent pricing has been reviewed and a low budget alert exists.
+
+See the [Security and cost checklist](docs/security-and-cost-checklist.md).
+
+## Troubleshooting practice
+
+Prepared exercises cover:
+
+1. a failed GitHub deployment;
+2. an Azure RBAC access-denied error;
+3. an unavailable managed API.
+
+The exercises are labelled as planned until they have actually been performed. Each final report will include impact, evidence, root cause, resolution, recovery verification and prevention.
+
+See the [Troubleshooting runbook](docs/troubleshooting-runbook.md).
+
+## Development approach
+
+AI assistance was used to scaffold and review parts of the frontend, API, infrastructure template and documentation. The project owner defined the requirements and is responsible for understanding the architecture, validating the implementation, deploying it safely and performing the troubleshooting exercises.
+
+This distinction is intentional: the portfolio demonstrates practical cloud support and operations skills rather than claiming professional software-development experience.
 
 ## Roadmap
 
 - [x] Create the public GitHub repository.
-- [x] Define the project scope and cost limits.
-- [ ] Build the first version of the support portal.
-- [ ] Deploy the portal to Azure Static Web Apps.
-- [ ] Configure continuous deployment with GitHub Actions.
-- [ ] Add the health endpoint and monitoring.
-- [ ] Complete three controlled troubleshooting scenarios.
-- [ ] Recreate the infrastructure using Bicep.
-- [ ] Add screenshots, diagrams and final documentation.
-
-## Cost guardrails
-
-The lab is intended to operate within free service allowances. It will avoid virtual machines, paid App Service plans, premium databases and other unnecessary billable resources. Azure costs will be checked before every deployment, and temporary resources will be removed after testing.
-
-## Security principles
-
-- No passwords, deployment credentials or API keys are stored in the repository.
-- No real customer or employer data is used.
-- Demo data is fictional and contains no personal information.
-- Access is granted using least-privilege principles.
-- Secrets are stored only in the appropriate GitHub or Azure secret-management interface.
-
-## Documentation
-
-As the project develops, the repository will include:
-
-- architecture overview;
-- deployment guide;
-- troubleshooting runbook;
-- incident reports;
-- security and cost checklist;
-- lessons learned.
-
-## Purpose
-
-This project supports a professional transition from technical customer support into cloud support and operations. It focuses on transferable skills: structured troubleshooting, clear communication, documentation, escalation and continuous improvement.
-
----
-
-This repository is a learning project. Features marked as planned are not presented as completed work.
+- [x] Define project scope and cost guardrails.
+- [x] Build the local support operations portal.
+- [x] Implement the managed health API.
+- [x] Add automated validation and tests.
+- [x] Add the Free-tier Bicep definition.
+- [x] Prepare deployment, security and troubleshooting documentation.
+- [ ] Review and merge the implementation pull request.
+- [ ] Deploy to Azure Static Web Apps Free.
+- [ ] Verify the live portal and `/api/health` endpoint.
+- [ ] Decide whether to enable Application Insights.
+- [ ] Perform and document the three controlled incidents.
