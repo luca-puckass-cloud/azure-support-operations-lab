@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="A hands-on Azure cloud support and operations lab."
+  >
+
+  <title>Azure Support Operations Lab</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="shell header-content">
+      <a class="brand" href="#" aria-label="Azure Support Lab home">
+        <span class="brand-mark" aria-hidden="true">AS</span>
+
+        <span>
+          <strong>Azure Support Lab</strong>
+          <small>Operations workspace</small>
+        </span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="#status">Status</a>
+        <a href="#runbooks">Runbooks</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+
+      <span class="environment-label">Local lab</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="overview" aria-labelledby="overview-title">
+      <div class="overview-copy">
+        <p class="section-label">Operations overview</p>
+
+        <h1 id="overview-title">Azure Support Operations Lab</h1>
+
+        <p>
+          A practical environment for learning cloud deployment, monitoring,
+          access control and structured incident response.
+        </p>
+      </div>
+
+      <div class="overview-controls">
+        <dl>
+          <div>
+            <dt>Environment</dt>
+            <dd>Local prototype</dd>
+          </div>
+
+          <div>
+            <dt>Last check</dt>
+            <dd id="last-updated" aria-live="polite">Not checked yet</dd>
+          </div>
+        </dl>
+
+        <button id="refresh-status" type="button">
+          Run status check
+        </button>
+      </div>
+    </section>
+
+    <section id="status" class="panel" aria-labelledby="status-title">
+      <div class="panel-heading">
+        <div>
+          <p class="section-label">System health</p>
+          <h2 id="status-title">Service components</h2>
+        </div>
+
+        <span class="overall-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Operational
+        </span>
+      </div>
+
+      <div class="service-list">
+        <article class="service-row">
+          <div>
+            <h3>Customer portal</h3>
+            <p>Static front-end prototype</p>
+          </div>
+
+          <span class="state state-operational">Available locally</span>
+          <span class="service-note">Manual check</span>
+        </article>
+
+        <article class="service-row">
+          <div>
+            <h3>Health API</h3>
+            <p>Serverless status endpoint</p>
+          </div>
+
+          <span class="state state-planned">Planned</span>
+          <span class="service-note">Not connected</span>
+        </article>
+
+        <article class="service-row">
+          <div>
+            <h3>Deployment pipeline</h3>
+            <p>GitHub Actions workflow</p>
+          </div>
+
+          <span class="state state-planned">Planned</span>
+          <span class="service-note">Not configured</span>
+        </article>
+
+        <article class="service-row">
+          <div>
+            <h3>Azure monitoring</h3>
+            <p>Metrics, logs and alerting</p>
+          </div>
+
+          <span class="state state-planned">Planned</span>
+          <span class="service-note">Not configured</span>
+        </article>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section id="runbooks" class="panel" aria-labelledby="runbooks-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">Knowledge base</p>
+            <h2 id="runbooks-title">Troubleshooting runbooks</h2>
+          </div>
+        </div>
+
+        <div class="runbook-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Portal is unavailable</h3>
+              <p>Connectivity and application availability checks.</p>
+            </div>
+            <strong>Draft</strong>
+          </article>
+
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Access is denied</h3>
+              <p>Identity, role assignment and RBAC investigation.</p>
+            </div>
+            <strong>Draft</strong>
+          </article>
+
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Deployment has failed</h3>
+              <p>Workflow logs, configuration and recovery steps.</p>
+            </div>
+            <strong>Draft</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="activity-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">Implementation</p>
+            <h2 id="activity-title">Project activity</h2>
+          </div>
+        </div>
+
+        <ol class="activity-list">
+          <li class="completed">
+            <div>
+              <strong>Repository initialized</strong>
+              <span>Project scope and roadmap documented</span>
+            </div>
+          </li>
+
+          <li class="current">
+            <div>
+              <strong>Local portal prototype</strong>
+              <span>Interface and status behavior in progress</span>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Azure deployment</strong>
+              <span>Not started</span>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <strong>Monitoring and incidents</strong>
+              <span>Not started</span>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <section
+      id="architecture"
+      class="panel architecture-panel"
+      aria-labelledby="architecture-title"
+    >
+      <div class="panel-heading">
+        <div>
+          <p class="section-label">Delivery path</p>
+          <h2 id="architecture-title">Planned architecture</h2>
+        </div>
+      </div>
+
+      <div class="architecture-flow" aria-label="Planned deployment architecture">
+        <span>Local code</span>
+        <span aria-hidden="true">→</span>
+        <span>GitHub</span>
+        <span aria-hidden="true">→</span>
+        <span>GitHub Actions</span>
+        <span aria-hidden="true">→</span>
+        <span>Azure Static Web Apps</span>
+        <span aria-hidden="true">→</span>
+        <span>Azure Monitor</span>
+      </div>
+
+      <p class="architecture-note">
+        Components remain marked as planned until they have been implemented
+        and verified.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-content">
+      <p>Azure Support Operations Lab</p>
+      <p>Fictional environment — no real customer data.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
