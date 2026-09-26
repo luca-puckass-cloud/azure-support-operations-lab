@@ -68,6 +68,7 @@ See [Architecture](docs/architecture.md) for responsibilities, request flow and 
 │   ├── host.json
 │   └── package.json
 ├── docs/
+│   ├── customer-success/
 │   ├── incidents/
 │   ├── architecture.md
 │   ├── deployment-guide.md
@@ -81,6 +82,8 @@ See [Architecture](docs/architecture.md) for responsibilities, request flow and 
 └── website/
     ├── index.html
     ├── script.js
+    ├── customer-success.mjs
+    ├── health-model.mjs
     ├── staticwebapp.config.json
     └── styles.css
 ```
@@ -158,7 +161,7 @@ This distinction is intentional: the portfolio targets cloud customer success wi
 - [x] Prepare the fictional customer brief, success plan and review templates.
 - [x] Separate customer health from technical service health in the portal.
 - [ ] Luca validates the customer brief in his own words.
-- [ ] Review and publish the Customer Success changes when approved.
+- [x] Review and publish the Customer Success changes with Luca's approval.
 - [ ] Deploy to Azure Static Web Apps Free.
 - [ ] Verify the live portal and `/api/health` endpoint.
 - [ ] Decide whether to enable Application Insights.
