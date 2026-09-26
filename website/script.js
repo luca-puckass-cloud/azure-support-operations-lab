@@ -4,6 +4,7 @@ const overallStatus = document.querySelector("#overall-status");
 const overallStatusText = document.querySelector("#overall-status-text");
 const apiState = document.querySelector("#api-state");
 const apiNote = document.querySelector("#api-note");
+const environmentValue = document.querySelector("#environment-value");
 
 const STATUS_CLASSES = ["is-degraded", "is-unavailable"];
 const API_STATE_CLASSES = [
@@ -38,6 +39,7 @@ function setApiStatus(label, note, stateClass) {
 }
 
 function showLocalPreview() {
+  environmentValue.textContent = "Local file preview";
   setOverallStatus("Local preview");
   setApiStatus("Not running locally", "Deploy or use SWA CLI", "state-planned");
   lastUpdatedText.textContent = formatTimestamp();
@@ -69,12 +71,21 @@ async function checkServiceHealth() {
     }
 
     const result = await response.json();
+    if (result.status !== "operational") {
+      throw new Error("Endpoint did not report operational status");
+    }
     const checkedAt = result.timestamp ? new Date(result.timestamp) : new Date();
+    if (Number.isNaN(checkedAt.getTime())) {
+      throw new Error("Invalid health timestamp");
+    }
+    const simulated = result.checks?.some(check => check.name === "local-preview");
 
-    setOverallStatus("Operational");
-    setApiStatus("Operational", `HTTP ${response.status}`, "state-operational");
+    environmentValue.textContent = simulated ? "Local simulation" : "HTTP endpoint";
+    setOverallStatus(simulated ? "Local simulation" : "Endpoint responding");
+    setApiStatus(simulated ? "Simulated response" : "Operational", `HTTP ${response.status}`, "state-operational");
     lastUpdatedText.textContent = formatTimestamp(checkedAt);
   } catch (error) {
+    environmentValue.textContent = "HTTP check failed";
     const timedOut = error.name === "AbortError";
 
     setOverallStatus("Degraded", "is-degraded");

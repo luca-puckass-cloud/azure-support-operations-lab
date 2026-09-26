@@ -9,6 +9,8 @@ const requiredFiles = [
   "website/index.html",
   "website/styles.css",
   "website/script.js",
+  "website/customer-success.mjs",
+  "website/health-model.mjs",
   "website/staticwebapp.config.json",
   "api/host.json",
   "api/package.json",
@@ -17,7 +19,8 @@ const requiredFiles = [
   "docs/architecture.md",
   "docs/deployment-guide.md",
   "docs/troubleshooting-runbook.md",
-  "docs/security-and-cost-checklist.md"
+  "docs/security-and-cost-checklist.md",
+  ...["customer-brief", "success-plan", "health-model", "evidence-register", "customer-communications", "value-review", "learning-guide-de"].map(name => `docs/customer-success/${name}.md`)
 ];
 
 const errors = [];

@@ -2,7 +2,7 @@
   "name": "azure-support-operations-lab",
   "version": "1.0.0",
   "private": true,
-  "description": "A hands-on Azure cloud support and operations lab.",
+  "description": "An Azure customer success case study: onboarding, adoption, incident communication and evidence-based reviews.",
   "scripts": {
     "preview": "node scripts/preview-server.mjs",
     "validate": "node scripts/validate-site.mjs",

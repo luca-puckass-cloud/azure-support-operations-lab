@@ -6,10 +6,10 @@
 
   <meta
     name="description"
-    content="A hands-on Azure cloud support and operations lab."
+    content="An Azure customer success case study: onboarding, adoption, incident communication and evidence-based reviews."
   >
 
-  <title>Azure Support Operations Lab</title>
+  <title>Azure Customer Success Journey</title>
 
   <link
     rel="icon"
@@ -20,37 +20,41 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="shell header-content">
-      <a class="brand" href="#" aria-label="Azure Support Lab home">
-        <span class="brand-mark" aria-hidden="true">AS</span>
+      <a class="brand" href="#" aria-label="Azure Customer Success Journey home">
+        <span class="brand-mark" aria-hidden="true">CS</span>
 
         <span>
-          <strong>Azure Support Lab</strong>
-          <small>Operations workspace</small>
+          <strong>Customer Success Journey</strong>
+          <small>Azure learning lab / Luca Puckaß</small>
         </span>
       </a>
 
       <nav aria-label="Primary navigation">
-        <a href="#status">Status</a>
+        <a href="#customer">Customer</a>
+        <a href="#journey">Journey</a>
+        <a href="#customer-health">Health</a>
+        <a href="#status">Technical checks</a>
         <a href="#runbooks">Runbooks</a>
-        <a href="#architecture">Architecture</a>
       </nav>
 
-      <span class="environment-label">Local lab</span>
+      <span class="environment-label">Portfolio case study</span>
     </div>
   </header>
 
-  <main class="shell">
+  <main id="main-content" class="shell">
     <section class="overview" aria-labelledby="overview-title">
       <div class="overview-copy">
-        <p class="section-label">Operations overview</p>
+        <p class="section-label">CloudShop / Fictional customer</p>
 
-        <h1 id="overview-title">Azure Support Operations Lab</h1>
+        <h1 id="overview-title">From onboarding<br>to customer value.</h1>
 
         <p>
-          A practical environment for learning cloud deployment, monitoring,
-          access control and structured incident response.
+          A small Azure pilot, a clear success plan, and a practical question:
+          can the customer use it confidently? Follow the work from discovery
+          to incident response and an evidence-based review.
         </p>
       </div>
 
@@ -58,7 +62,7 @@
         <dl>
           <div>
             <dt>Environment</dt>
-            <dd>Local prototype</dd>
+            <dd id="environment-value">Not checked</dd>
           </div>
 
           <div>
@@ -73,16 +77,65 @@
       </div>
     </section>
 
+    <aside class="evidence-notice" aria-label="Evidence boundaries">
+      <strong>Prepared, not yet cloud-verified.</strong>
+      Azure deployment and live exercises are pending. CloudShop and its day-60 example
+      are fictional. Local code is real; customer outcomes are not claimed.
+    </aside>
+
+    <section id="customer" class="panel" aria-labelledby="customer-title">
+      <div class="panel-heading">
+        <div><p class="section-label">01 / Discovery</p><h2 id="customer-title">One customer. A focused pilot.</h2></div>
+        <span class="state state-planned">Scenario assumptions</span>
+      </div>
+      <div class="brief-grid">
+        <div><h3>The problem</h3><p>A small e-commerce support team relies on scattered instructions and repeated status questions.</p></div>
+        <div><h3>The pilot</h3><p>One shared information and status portal. No real orders, payments or production shop migration.</p></div>
+        <div><h3>Your role</h3><p>Understand goals, guide onboarding, coordinate technical help and follow through on open actions.</p></div>
+      </div>
+      <div class="criteria"><strong>Success criteria</strong><ol><li>Verify the deployed portal and endpoint.</li><li>Recover from a controlled incident and communicate clearly.</li><li>Complete a status, runbook and escalation walkthrough.</li></ol></div>
+    </section>
+
+    <section id="journey" class="panel" aria-labelledby="journey-title">
+      <div class="panel-heading"><div><p class="section-label">02 / Success plan</p><h2 id="journey-title">A plan for the first 90 days</h2></div><span class="state state-planned">Proposed lifecycle</span></div>
+      <div class="brief-grid journey-grid">
+        <article><p class="phase-label">Days 0-30</p><h3>Onboard</h3><p>Agree goals and owners. Deploy the pilot. Explain status, limitations and the escalation route.</p><p class="deliverable">Evidence: deployment + walkthrough</p></article>
+        <article><p class="phase-label">Days 31-60</p><h3>Enable</h3><p>Identify recurring blockers. Practise incident communication. Check whether the user can work independently.</p><p class="deliverable">Evidence: incident + learning gaps</p></article>
+        <article><p class="phase-label">Days 61-90</p><h3>Review value</h3><p>Review goals, costs and risks. Recommend continuing, adjusting or pausing before adding services.</p><p class="deliverable">Evidence: review + next actions</p></article>
+      </div>
+      <p class="architecture-note">A modelled customer lifecycle, not 90 days of completed work. Lab exercises use their actual execution dates.</p>
+    </section>
+
+    <section id="customer-health" class="panel" aria-labelledby="customer-health-title">
+      <div class="panel-heading"><div><p class="section-label">03 / Customer health</p><h2 id="customer-health-title">Adoption is more than uptime.</h2></div><span id="customer-health-label" class="state state-planned">Not assessed</span></div>
+      <div class="scenario-controls" role="group" aria-label="Customer health data source">
+        <button type="button" id="show-project" class="scenario-button" aria-pressed="true">Current evidence</button>
+        <button type="button" id="show-example" class="scenario-button" aria-pressed="false">Simulated day 60</button>
+      </div>
+      <div class="health-summary" aria-live="polite"><strong id="customer-health-score">No score yet</strong><p id="customer-health-context">Customer evidence has not been collected. Missing data is unknown, not healthy.</p></div>
+      <div class="table-scroll" role="region" aria-label="Customer health dimensions" tabindex="0">
+        <table class="health-table"><caption>Five dimensions, with evidence and a next action</caption><thead><tr><th scope="col">Dimension / weight</th><th scope="col">Assessment</th><th scope="col">Next action</th></tr></thead><tbody id="customer-health-rows">
+          <tr><th scope="row">Adoption / 30%</th><td>Not assessed</td><td>Complete a guided walkthrough.</td></tr>
+          <tr><th scope="row">Support / 25%</th><td>Not assessed</td><td>Perform a controlled incident exercise.</td></tr>
+          <tr><th scope="row">Engagement / 15%</th><td>Not assessed</td><td>Define review ownership in the role-play.</td></tr>
+          <tr><th scope="row">Value / 20%</th><td>Not assessed</td><td>Collect evidence against the agreed criteria.</td></tr>
+          <tr><th scope="row">Cost / 10%</th><td>Not assessed</td><td>Review actual costs after deployment.</td></tr>
+        </tbody></table>
+      </div>
+      <details class="model-details"><summary>How the training score works</summary><p>Ratings: 0 = blocked, 1 = partial, 2 = criterion met. Sum each weight × rating / 2. Below 50: at risk; 50 to below 80: needs attention; 80+: healthy. Any unknown dimension prevents a numeric score. A recorded critical blocker overrides the label to at risk. These are learning thresholds, not a validated predictor.</p><p>Customer health never changes when you run the technical status check. The example is synthetic and is not saved as project evidence.</p></details>
+      <noscript><p>The current assessment is shown above. Enable JavaScript to explore the simulated example.</p></noscript>
+    </section>
+
     <section id="status" class="panel" aria-labelledby="status-title">
       <div class="panel-heading">
         <div>
-          <p class="section-label">System health</p>
-          <h2 id="status-title">Service components</h2>
+          <p class="section-label">04 / Technical evidence</p>
+          <h2 id="status-title">Service checks, not customer health</h2>
         </div>
 
         <span id="overall-status" class="overall-status" aria-live="polite">
           <span class="status-dot" aria-hidden="true"></span>
-          <span id="overall-status-text">Local preview</span>
+          <span id="overall-status-text">Not checked</span>
         </span>
       </div>
 
@@ -93,7 +146,7 @@
             <p>Static front-end prototype</p>
           </div>
 
-          <span id="portal-state" class="state state-operational">Available locally</span>
+          <span id="portal-state" class="state state-operational">Page loaded</span>
           <span id="portal-note" class="service-note">Browser check</span>
         </article>
 
@@ -110,11 +163,11 @@
         <article class="service-row">
           <div>
             <h3>Deployment pipeline</h3>
-            <p>GitHub Actions workflow</p>
+            <p>Validation exists; Azure deployment pending</p>
           </div>
 
-          <span class="state state-operational">Configured</span>
-          <span class="service-note">Ready for GitHub</span>
+          <span class="state state-planned">Prepared</span>
+          <span class="service-note">Not cloud-verified</span>
         </article>
 
         <article class="service-row">
@@ -127,6 +180,7 @@
           <span class="service-note">Not configured</span>
         </article>
       </div>
+      <p class="architecture-note">The endpoint checks its own runtime only. It does not verify a shop, database, customer adoption or an uptime SLA. Local preview uses a simulated endpoint.</p>
     </section>
 
     <div class="content-grid">
@@ -180,28 +234,28 @@
           <li class="completed">
             <div>
               <strong>Repository initialized</strong>
-              <span>Project scope and roadmap documented</span>
+              <span>Existing technical foundation retained</span>
             </div>
           </li>
 
           <li class="completed">
             <div>
-              <strong>Local portal prototype</strong>
-              <span>Interface, health checks and validation complete</span>
+              <strong>Customer success materials</strong>
+              <span>Discovery, health model and review templates prepared</span>
             </div>
           </li>
 
           <li class="current">
             <div>
-              <strong>Azure deployment</strong>
-              <span>Infrastructure and workflow prepared</span>
+              <strong>Explain the customer brief</strong>
+              <span>Next: guided Azure setup and deployment</span>
             </div>
           </li>
 
           <li>
             <div>
-              <strong>Monitoring and incidents</strong>
-              <span>Not started</span>
+              <strong>Hands-on evidence and review</strong>
+              <span>Incidents, onboarding and cost review still pending</span>
             </div>
           </li>
         </ol>
@@ -229,23 +283,24 @@
         <span aria-hidden="true">→</span>
         <span>Azure Static Web Apps</span>
         <span aria-hidden="true">→</span>
-        <span>Azure Monitor</span>
+        <span>Health API</span>
       </div>
 
       <p class="architecture-note">
-        Components remain marked as planned until they have been implemented
-        and verified.
+        Planned Azure path. Monitoring is an optional separate extension, not
+        part of the request chain. No database or real customer data is included.
       </p>
     </section>
   </main>
 
   <footer>
     <div class="shell footer-content">
-      <p>Azure Support Operations Lab</p>
-      <p>Version 1.0 · Fictional environment — no real customer data.</p>
+      <p>Azure Customer Success Journey</p>
+      <p>Independent learning project · Fictional customer · AI-assisted implementation</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="customer-success.mjs"></script>
 </body>
 </html>

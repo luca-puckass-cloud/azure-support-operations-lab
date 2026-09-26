@@ -16,6 +16,8 @@ Create a feature branch that temporarily breaks function discovery or the API lo
 
 ## Report
 
+For the CSM exercise, also complete the [customer communication and escalation record](../customer-success/customer-communications.md). Capture actual update times, a technical handoff and recovery verification. Mark messages as role-play, not communications with a real customer.
+
 - **Impact:** To be completed
 - **Detection:** To be completed
 - **Root cause:** To be completed

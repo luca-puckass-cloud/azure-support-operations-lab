@@ -549,6 +549,47 @@ footer {
   font-weight: 700;
 }
 
+/* Customer success case study */
+.skip-link { position: absolute; top: -100px; left: 16px; z-index: 30; background: white; padding: 12px; }
+.skip-link:focus { top: 8px; }
+section[id] { scroll-margin-top: 150px; }
+.evidence-notice { padding: 16px 20px; margin-bottom: 24px; border-left: 3px solid var(--primary); background: #eaf1f9; color: #34465c; font-size: .9rem; }
+.evidence-notice strong { display: block; margin-bottom: 3px; }
+.brief-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.brief-grid h3 { font-size: 1rem; margin-bottom: 8px; }
+.brief-grid p { font-size: .9rem; color: #526075; margin-bottom: 0; }
+.criteria { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); font-size: .9rem; }
+.criteria ol { margin-bottom: 0; padding-left: 20px; }
+.journey-grid article { border-top: 2px solid var(--border-strong); padding-top: 16px; }
+.journey-grid .phase-label { font-size: .8rem; color: var(--primary); font-weight: 700; margin-bottom: 6px; }
+.journey-grid .deliverable { margin-top: 14px; font-size: .78rem; font-weight: 650; }
+.scenario-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.scenario-button { background: white; color: var(--text); border-color: var(--border-strong); }
+.scenario-button[aria-pressed="true"] { background: #173456; border-color: #173456; color: white; }
+.scenario-button:hover { background: #eaf1f9; color: var(--text); }
+.health-summary { display: flex; gap: 24px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--border); }
+.health-summary strong { font-size: 1.35rem; white-space: nowrap; }
+.health-summary p { margin: 0; color: #526075; font-size: .9rem; }
+.table-scroll { overflow-x: auto; }
+.health-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.health-table caption { text-align: left; font-size: .8rem; color: var(--text-muted); padding-bottom: 10px; }
+.health-table th, .health-table td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.health-table thead { background: var(--surface-muted); }
+.health-table th:first-child { width: 22%; }
+.health-table td { width: 39%; }
+.model-details { margin-top: 20px; font-size: .85rem; color: #526075; }
+.model-details summary { cursor: pointer; color: var(--text); font-weight: 650; }
+.model-details p { margin: 12px 0 0; }
+summary:focus-visible, .table-scroll:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+@media (max-width: 1040px) { .environment-label { display: none; } nav { gap: 16px; } }
+@media (max-width: 640px) {
+  .brief-grid { grid-template-columns: 1fr; gap: 22px; }
+  .health-summary { display: block; }
+  .health-summary p { margin-top: 10px; }
+  .health-table { min-width: 520px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
 /* Responsive layout */
 
 @media (max-width: 880px) {

@@ -1,5 +1,11 @@
 # Architecture
 
+## Customer success layer
+
+The Azure Customer Success Journey reuses this technical foundation. The fictional CloudShop case adds discovery, onboarding, adoption review and incident communication. Its health model runs entirely in the browser, separately from the API, with no CRM integration or customer database. Default ratings are unknown. The alternative day-60 dataset is explicitly synthetic and never updates the evidence register.
+
+The endpoint checks its own runtime, not customer adoption or complete business availability. Local preview uses a simulated endpoint. Azure deployment remains pending. See [customer brief](customer-success/customer-brief.md) and [health model](customer-success/health-model.md).
+
 ## Objective
 
 The lab provides a small customer-facing status portal backed by a managed Azure Functions API. It is intentionally simple so the operational concerns remain visible: deployment, health checks, access control, monitoring, cost and incident response.
