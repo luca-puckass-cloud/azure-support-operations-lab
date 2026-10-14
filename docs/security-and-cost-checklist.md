@@ -2,7 +2,7 @@
 
 ## Before deployment
 
-- [x] Correct Azure subscription and tenant selected (guided setup).
+- [x] Correct Azure subscription and tenant selected.
 - [x] Actual resource group and region documented; naming label is not a region guarantee.
 - [x] Azure Static Web Apps **Free** SKU selected.
 - [x] No virtual machine, paid App Service plan or database included.

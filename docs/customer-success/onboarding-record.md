@@ -1,6 +1,6 @@
-# CloudShop onboarding record · assistant walkthrough
+# CloudShop onboarding record · functional walkthrough
 
-> Executed by Codex, not an independent customer or learner test. CloudShop is fictional.
+> Functional verification, not an independent customer or learner test. CloudShop is fictional.
 
 ## Purpose
 

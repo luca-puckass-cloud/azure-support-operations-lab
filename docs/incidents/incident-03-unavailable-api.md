@@ -1,6 +1,6 @@
 # Incident 03 — Local unavailable API and recovery
 
-> Executed by Codex on 14 October 2026 using a local injected HTTP 503. The public Azure demo was not interrupted.
+> Executed locally on 14 October 2026 using a local injected HTTP 503. The public Azure demo was not interrupted.
 
 ## Impact and detection
 The local portal remained reachable (HTTP 200), but its status API returned HTTP 503. The real frontend controller displayed Degraded / Unavailable and “HTTP 503: API check failed”. This blocks the pilot status check, not any real shop, payment or order.

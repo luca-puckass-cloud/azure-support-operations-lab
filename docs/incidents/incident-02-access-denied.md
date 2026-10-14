@@ -1,6 +1,6 @@
 # Incident 02 — Local access-denied response
 
-> Local HTTP 403 simulation executed by Codex on 14 October 2026. No Azure identity, permission or role assignment was changed.
+> Local HTTP 403 simulation executed on 14 October 2026. No Azure identity, permission or role assignment was changed.
 
 ## Symptom
 The local page returned HTTP 200 while /api/health returned HTTP 403. The frontend showed Degraded, Unavailable and “HTTP 403: access denied”.

@@ -25,7 +25,7 @@ export function assessCustomerHealth(ratings = {}, criticalBlocker = false) {
 }
 
 export const currentEvidence = {
-  adoption: { rating: null, evidence: 'Assistant walkthrough completed; independent learner test pending.', action: 'Ask a volunteer to find status, runbook and escalation unaided.' },
+  adoption: { rating: null, evidence: 'Functional walkthrough completed; independent learner test pending.', action: 'Ask a volunteer to find status, runbook and escalation unaided.' },
   support: { rating: 1, evidence: 'Local HTTP 503/403 recovery exercises; no continuous detection.', action: 'Review detection needs before selecting monitoring.' },
   engagement: { rating: null, evidence: 'Fictional customer; no sponsor meeting.', action: 'Use the role-play review script; do not invent engagement.' },
   value: { rating: 1, evidence: 'Live portal/API verified; customer benefit unmeasured.', action: 'Test independent use and establish a baseline before claiming savings.' },

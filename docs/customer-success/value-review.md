@@ -12,7 +12,7 @@ Portal and managed API deployed on Azure Static Web Apps Free. Live HTTP/asset/h
 
 ## 3. What the user can do
 
-The assistant walked through technical status, the health example and runbook/escalation paths (E07). Independent user ability has not been measured. A volunteer should repeat the acceptance tasks without help before adoption is rated.
+The functional walkthrough covered technical status, the health example and runbook/escalation paths (E07). Independent user ability has not been measured. A volunteer should repeat the acceptance tasks without help before adoption is rated.
 
 ## 4. How issues are handled
 

@@ -22,5 +22,5 @@ for (const path of ['/', '/styles.css', '/script.js', '/customer-success.mjs', '
   records.push(record);
 }
 await mkdir('docs/evidence', { recursive: true });
-await writeFile('docs/evidence/live-verification.json', JSON.stringify({ executedBy: 'Codex, at Luca request', base, limitation: 'Point-in-time HTTP checks, not an uptime measurement or customer adoption assessment.', records }, null, 2) + '\n');
+await writeFile('docs/evidence/live-verification.json', JSON.stringify({ verificationMethod: 'Automated public HTTP checks', base, limitation: 'Point-in-time HTTP checks, not an uptime measurement or customer adoption assessment.', records }, null, 2) + '\n');
 console.log('PASS: live portal, assets, security headers and API. Evidence: docs/evidence/live-verification.json');

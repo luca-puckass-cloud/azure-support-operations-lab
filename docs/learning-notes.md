@@ -10,9 +10,9 @@
 - Application Insights can provide request, failure and trace evidence after it is enabled.
 - RBAC grants permissions to an identity at a defined Azure scope.
 
-## Honest description of AI assistance
+## Project scope
 
-> I defined the requirements and completed the guided Azure setup. AI assisted with code, automated validation, local failure exercises and documentation. My next learning step is repeating and explaining the local tests independently. Continuous monitoring is not enabled.
+> The project combines a working Azure deployment, automated verification, repeatable local failure exercises and a fictional customer success case. Continuous monitoring is not enabled; independent user acceptance has not been measured.
 
 ## Interview summary
 

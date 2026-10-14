@@ -24,10 +24,10 @@
 | ID | Action | Owner | Due point | State |
 |---|---|---|---|---|
 | A01 | Explain scope in own words | Luca | Before Azure setup | Open |
-| A02 | Review access and cost guardrails | Luca, guided | Before provisioning | Completed; initial billing visibility limited |
-| A03 | Deploy and capture endpoint evidence | Luca guided setup; Codex verification | 14 Oct 2026 | Completed, E02/E03 |
-| A04 | Execute local fault tests and written updates | Codex | 14 Oct 2026 | Completed; Luca's independent repeat optional |
-| A05 | Review health and unknowns | Codex, written mock review | 14 Oct 2026 | Completed; Luca's explanation still to practise |
+| A02 | Review access and cost guardrails | Project owner | Before provisioning | Completed; initial billing visibility limited |
+| A03 | Deploy and capture endpoint evidence | Project owner; automated verification | 14 Oct 2026 | Completed, E02/E03 |
+| A04 | Execute local fault tests and written updates | Test automation | 14 Oct 2026 | Completed; Luca's independent repeat optional |
+| A05 | Review health and unknowns | Written mock review | 14 Oct 2026 | Completed; Luca's explanation still to practise |
 | A06 | Independent onboarding acceptance | Luca + volunteer | Before claiming adoption | Open |
 
 Roles in this fictional log do not indicate a real customer's agreement.

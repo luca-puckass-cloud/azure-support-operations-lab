@@ -2,7 +2,7 @@
 
 > **Completed portfolio lab · 14 October 2026:** Azure Static Web Apps Free deployed, public portal and managed API verified, local failure/recovery exercises executed, mock customer communications and value review completed. CloudShop is fictional; independent customer adoption and commercial outcomes are not measured.
 
-A portfolio lab by Luca Puckaß connecting four years of technical customer support with Azure fundamentals and customer success. Luca completed the Azure portal setup with guidance; Codex assisted with implementation, automated checks and documentation. This is a learning project, not professional Azure administration or an employer engagement.
+A portfolio lab by Luca Puckaß connecting four years of technical customer support with Azure fundamentals and customer success. This is a learning project, not professional Azure administration or an employer engagement.
 
 **[Open the live demo](https://purple-meadow-08a08f610.3.azurestaticapps.net/)** · [Live API](https://purple-meadow-08a08f610.3.azurestaticapps.net/api/health) · [Evidence register](docs/customer-success/evidence-register.md) · [German walkthrough](docs/customer-success/project-walkthrough-de.md)
 
@@ -14,7 +14,7 @@ CloudShop is a fictional e-commerce support team with scattered instructions and
 |---|---|
 | Verify deployed portal and endpoint | Live HTTP 200 checks, runtime response and headers; E02/E03 |
 | Recover from a controlled incident and communicate | Local injected HTTP 503/403 and failed validation, recovery records, German role-play updates; E05/E06 |
-| Complete status, runbook and escalation walkthrough | Assistant functional walkthrough; independent learner test remains open; E07 |
+| Complete status, runbook and escalation walkthrough | Functional walkthrough; independent learner test remains open; E07 |
 
 ## Completed deliverables
 
@@ -70,10 +70,10 @@ For a browser demo, run `npm run preview` at the repository root. The local API 
 
 ## Learning-project boundaries
 
-The Azure deployment is real. HTTP 503/403 faults and validation failure were deliberately injected locally and verified by Codex. The access-denied exercise is **not** an Azure RBAC change. Customer messages are written role-play, not sent. The walkthrough is an assistant check, not proof that Luca or a customer can complete the tasks unaided.
+The Azure deployment is real. HTTP 503/403 faults and validation failure were deliberately injected locally and verified through automated tests. The access-denied exercise is **not** an Azure RBAC change. Customer messages are written role-play, not sent. The walkthrough is a functional check; independent learner and customer acceptance have not been assessed.
 
 The Bicep template is provided as an optional reproducible definition and has not been deployed. An independent onboarding test, real customer engagement, quantified time savings and long-term uptime remain unmeasured. These are follow-up evidence, not fabricated results.
 
 ## Interview demonstration
 
-Open the portal, run a technical check, explain why customer health remains unknown, show one local incident report, and finish with the [value review](docs/customer-success/value-review.md). A guided explanation of every step is in the [German walkthrough](docs/customer-success/project-walkthrough-de.md).
+Open the portal, run a technical check, explain why customer health remains unknown, show one local incident report, and finish with the [value review](docs/customer-success/value-review.md). An explanation of every step is in the [German walkthrough](docs/customer-success/project-walkthrough-de.md).

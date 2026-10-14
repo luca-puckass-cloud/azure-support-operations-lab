@@ -30,7 +30,7 @@ Luca may perform several roles in the lab, but a role-play is not independent cu
 - Start with the existing small Static Web Apps design. Review suitability and limitations before deployment.
 - No promised high availability, compliance certification or production SLA.
 - Learning-budget proposal: EUR 0 for the initial Free-SKU pilot; paid additions need Luca's separate approval. Verify eligibility and billing before claiming zero cost.
-- Confirm subscription, region and access owner in the guided Azure session.
+- Confirm subscription, region and access owner in the Azure session.
 - Decide how to collect costs and usage. An empty or delayed cost view does not prove there were no charges.
 
 ## Luca's discovery exercise

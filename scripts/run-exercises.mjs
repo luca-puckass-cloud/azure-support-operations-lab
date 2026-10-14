@@ -74,5 +74,5 @@ try {
   await rm(scratch, { recursive: true, force: true });
 }
 await mkdir('docs/evidence', { recursive: true });
-await writeFile('docs/evidence/local-exercises.json', JSON.stringify({ executedBy: 'Codex, at Luca request', startedWith: healthy.at, scope: 'local exercises; no production outage or IAM change', records }, null, 2) + '\n');
+await writeFile('docs/evidence/local-exercises.json', JSON.stringify({ verificationMethod: 'Automated local HTTP, frontend-controller and validation exercises', startedWith: healthy.at, scope: 'local exercises; no production outage or IAM change', records }, null, 2) + '\n');
 console.log('PASS: local baseline, HTTP 503 recovery, HTTP 403 recovery, failed validation and valid-project recovery. Evidence: docs/evidence/local-exercises.json');

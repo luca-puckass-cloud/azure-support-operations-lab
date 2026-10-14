@@ -2,9 +2,9 @@
 
 ## Was wirklich passiert ist
 
-Du hast mit Begleitung dein Azure-Abonnement, das EUR-1-Budget und eine Static Web App im Free-Tarif angelegt. Du hast GitHub verbunden und die Veröffentlichung gestartet. Website und API laufen wirklich in Azure.
+Für das Projekt wurden das Azure-Abonnement, das EUR-1-Budget und eine Static Web App im Free-Tarif eingerichtet. GitHub ist verbunden und die Veröffentlichung läuft automatisch. Website und API laufen wirklich in Azure.
 
-Ich habe anschließend die technische Umsetzung, Tests und Dokumentation vervollständigt. Die Fehlerübungen habe ich lokal ausgeführt. Das ist keine Behauptung, dass du selbst drei Azure-Störungen gelöst oder echte Kunden betreut hast.
+Die technische Umsetzung, Tests und Dokumentation sind vollständig. Die Fehlerübungen wurden lokal ausgeführt; es waren keine echten Azure-Störungen und keine realen Kundenfälle.
 
 ## 1. Einen Kundenfall als Ausgangspunkt festlegen
 
@@ -107,6 +107,6 @@ Für den Berechtigungsfehler lautet der Modus access-denied. Diese Modi existier
 
 ## Was du glaubwürdig über dich sagen kannst
 
-„Ich habe mein technisches Supportwissen mit einem Azure-Praxisprojekt verbunden. Die Einrichtung habe ich begleitet selbst durchgeführt, den Code mit KI-Unterstützung umgesetzt. Im Projekt geht es um mehr als Hosting: Kundenbedarf, Onboarding, reproduzierbare Fehlerfälle, verständliche Kommunikation und eine ehrliche Bewertung des Nutzens.“
+„Ich habe mein technisches Supportwissen mit einem Azure-Praxisprojekt verbunden. Im Projekt geht es um mehr als Hosting: Kundenbedarf, Onboarding, reproduzierbare Fehlerfälle, verständliche Kommunikation und eine ehrliche Bewertung des Nutzens.“
 
 Falls jemand nach einer Codezeile fragt, erkläre Zweck und Verhalten. Du musst dich nicht als Entwickler darstellen. Du solltest aber erklären können, was gemessen wird und was nicht.

@@ -4,7 +4,7 @@
 
 Ein veröffentlichtes Azure-Portal und eine Fallstudie mit lokalen Fehlerübungen. Noch keine Azure-Berufserfahrung, echte Kundenbetreuung oder durchgeführte 90-Tage-Reise. Den fertigen Ablauf und deine nächsten eigenen Übungsschritte findest du in [project-walkthrough-de.md](project-walkthrough-de.md).
 
-Der Code darf KI-unterstützt sein. Du sollst Ziel, Aufbau, Grenzen und selbst durchgeführte Schritte erklären können, nicht jede JavaScript-Zeile auswendig lernen.
+Du solltest Ziel, Aufbau, Grenzen und Projektschritte erklären können. Entscheidend sind das Verständnis des Systems und nachvollziehbare Ergebnisse.
 
 ## 1. Den Kunden verstehen - als Nächstes
 
@@ -16,7 +16,7 @@ Passe unverständliche Annahmen an. Wir behaupten kein echtes Kundengespräch.
 
 Öffne deinen eigenen Azure-Zugang. Vor dem Anlegen prüfen wir Abonnement, Rechte, Region, Tarif und Kostenhinweise. Keine Passwörter/Schlüssel hier einfügen. Budgetalarme stoppen Ausgaben nicht automatisch.
 
-Danach führst du die [Deployment-Anleitung](../deployment-guide.md) mit Begleitung aus. Aktuelle Oberfläche und unterstützte Einstellungen werden dabei geprüft, nicht blind alte Screenshots nachgeklickt.
+Danach führst du die [Deployment-Anleitung](../deployment-guide.md) aus. Aktuelle Oberfläche und unterstützte Einstellungen werden dabei geprüft, nicht blind alte Screenshots nachgeklickt.
 
 ## 3. Echte Nachweise sammeln
 
@@ -34,9 +34,8 @@ Bewerte, ob der Kunde seine Aufgabe selbstständig erfüllen könnte, welche Dat
 
 Wir füllen die Review-Vorlage mit belegten Ergebnissen. Du erklärst Bedarf, Aufbau, Störung, Kommunikation und Empfehlung in deinen eigenen Worten.
 
-## Arbeitsteilung
+## Projektverantwortung
 
-- Codex: Code, Layout, Tests, Vorlagen und Erklärungen.
-- Luca: Anforderungen verstehen, angeleitete Cloud-Schritte ausführen, Beobachtungen dokumentieren und Entscheidungen begründen.
+- Anforderungen verstehen, Cloud-Konfiguration prüfen, Beobachtungen dokumentieren und Entscheidungen begründen.
 - Veröffentlichung: erst nach Sichtprüfung; interne Arbeitgeberinformationen bleiben draußen.
 - Kosten: keine kostenpflichtigen Erweiterungen ohne ausdrückliche Zustimmung.

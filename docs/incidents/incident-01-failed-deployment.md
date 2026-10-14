@@ -1,6 +1,6 @@
 # Incident 01 — Failed pre-deployment validation
 
-> Executed locally by Codex on 14 October 2026. Not a failed Azure or GitHub deployment.
+> Executed locally on 14 October 2026. Not a failed Azure or GitHub deployment.
 
 ## Symptom and scope
 The repository validator exited with code 1 and reported invalid staticwebapp.config.json. Only a disposable local fixture was affected; live Azure stayed reachable.

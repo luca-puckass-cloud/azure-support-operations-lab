@@ -1,6 +1,6 @@
 # Deployment guide
 
-> Status: Portal deployment completed by Luca with guidance on 14 October 2026. Live portal and managed API verified. This remains a repeatable deployment reference.
+> Status: Portal deployment completed on 14 October 2026. Live portal and managed API verified. This remains a repeatable deployment reference.
 
 ## Recommended first deployment
 

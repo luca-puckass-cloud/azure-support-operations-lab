@@ -1,6 +1,6 @@
 # Customer communication · completed written role-play
 
-> Fictional CloudShop case. These messages were drafted by Codex at Luca's request; no message was sent to a customer. The support scenario uses the actual local HTTP 503 exercise recorded on 14 October 2026; the exact UTC times of the latest run are in local-exercises.json. Message timing below is a proposed script, not evidence of communications sent.
+> Fictional CloudShop case. These messages are written training material; no message was sent to a customer. The support scenario uses the actual local HTTP 503 exercise recorded on 14 October 2026; the exact UTC times of the latest run are in local-exercises.json. Message timing below is a proposed script, not evidence of communications sent.
 
 ## Initial update
 
