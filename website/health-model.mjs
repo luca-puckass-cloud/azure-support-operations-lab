@@ -25,11 +25,11 @@ export function assessCustomerHealth(ratings = {}, criticalBlocker = false) {
 }
 
 export const currentEvidence = {
-  adoption: { rating: null, evidence: 'Not assessed', action: 'Complete a guided walkthrough.' },
-  support: { rating: null, evidence: 'Not assessed', action: 'Perform a controlled incident exercise.' },
-  engagement: { rating: null, evidence: 'Not assessed', action: 'Define review ownership in the role-play.' },
-  value: { rating: null, evidence: 'Not assessed', action: 'Collect evidence against the agreed criteria.' },
-  cost: { rating: null, evidence: 'Not assessed', action: 'Review actual costs after deployment.' }
+  adoption: { rating: null, evidence: 'Assistant walkthrough completed; independent learner test pending.', action: 'Ask a volunteer to find status, runbook and escalation unaided.' },
+  support: { rating: 1, evidence: 'Local HTTP 503/403 recovery exercises; no continuous detection.', action: 'Review detection needs before selecting monitoring.' },
+  engagement: { rating: null, evidence: 'Fictional customer; no sponsor meeting.', action: 'Use the role-play review script; do not invent engagement.' },
+  value: { rating: 1, evidence: 'Live portal/API verified; customer benefit unmeasured.', action: 'Test independent use and establish a baseline before claiming savings.' },
+  cost: { rating: 1, evidence: 'No cost reported at initial review; reporting may lag.', action: 'Repeat the subscription cost review after data arrives.' }
 };
 
 export const syntheticExample = {

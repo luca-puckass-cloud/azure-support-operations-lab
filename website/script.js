@@ -67,7 +67,9 @@ async function checkServiceHealth() {
     });
 
     if (!response.ok) {
-      throw new Error(`Health endpoint returned HTTP ${response.status}`);
+      const error = new Error(`Health endpoint returned HTTP ${response.status}`);
+      error.httpStatus = response.status;
+      throw error;
     }
 
     const result = await response.json();
@@ -91,7 +93,7 @@ async function checkServiceHealth() {
     setOverallStatus("Degraded", "is-degraded");
     setApiStatus(
       "Unavailable",
-      timedOut ? "Request timed out" : "API check failed",
+      timedOut ? "Request timed out" : error.httpStatus === 403 ? "HTTP 403: access denied" : error.httpStatus ? `HTTP ${error.httpStatus}: API check failed` : "API check failed",
       "state-unavailable"
     );
     lastUpdatedText.textContent = formatTimestamp();

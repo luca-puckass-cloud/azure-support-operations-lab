@@ -2,23 +2,23 @@
 
 ## Before deployment
 
-- [ ] Correct Azure subscription and tenant selected.
-- [ ] Resource group name and region reviewed.
-- [ ] Azure Static Web Apps **Free** SKU selected.
-- [ ] No virtual machine, paid App Service plan or database included.
-- [ ] Repository contains no passwords, API keys, deployment tokens or personal data.
+- [x] Correct Azure subscription and tenant selected (guided setup).
+- [x] Actual resource group and region documented; naming label is not a region guarantee.
+- [x] Azure Static Web Apps **Free** SKU selected.
+- [x] No virtual machine, paid App Service plan or database included.
+- [x] Published project files contain no credentials or private customer data; workflow contains a secret reference only.
 - [ ] GitHub account uses two-factor authentication and a private commit email.
 - [ ] `.gitignore` excludes local settings and environment files.
 
 ## After deployment
 
-- [ ] HTTPS URL works.
-- [ ] `/api/health` returns only non-sensitive operational data.
+- [x] HTTPS URL works.
+- [x] `/api/health` returns only non-sensitive operational data.
 - [ ] GitHub Actions secret exists but its value is never displayed or copied.
-- [ ] Security headers are present.
-- [ ] Cost Analysis shows the expected amount.
-- [ ] A low budget notification is configured before enabling paid telemetry.
-- [ ] Unused test resources are removed after an exercise.
+- [x] Security headers are present in live HTTP responses.
+- [ ] Cost Analysis reporting is complete (initial view: no cost reported; values unavailable).
+- [x] EUR 1 subscription budget created; no paid telemetry enabled. Recipient/threshold not reverified in completion.
+- [x] No extra cloud test resources created; disposable local fixture removed.
 
 ## Optional monitoring decision
 

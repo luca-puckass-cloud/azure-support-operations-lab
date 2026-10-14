@@ -1,39 +1,40 @@
-# Customer communication and escalation
+# Customer communication · completed written role-play
 
-> Training templates only. No message sent, no real customer case and no agreed response-time commitment.
+> Fictional CloudShop case. These messages were drafted by Codex at Luca's request; no message was sent to a customer. The support scenario uses the actual local HTTP 503 exercise recorded on 14 October 2026; the exact UTC times of the latest run are in local-exercises.json. Message timing below is a proposed script, not evidence of communications sent.
 
-## Exercise: unavailable status endpoint
+## Initial update
 
-Use [Incident 03](../incidents/incident-03-unavailable-api.md) after deployment. Gather evidence before claiming a cause. Break only this lab deliberately, never a real service.
+“Hallo Lena, die Statusprüfung unseres Testportals liefert aktuell einen Fehler. Die Seite selbst ist erreichbar, aber die Prüf-API antwortet mit HTTP 503. Ich prüfe die betroffene Komponente und halte dich über den nächsten Schritt auf dem Laufenden. Über eure Bestellungen sagt dieser Fehler nichts aus, da sie nicht mit dem Pilot verbunden sind. Mein nächstes Update bekommst du in diesem Übungsszenario um 07:15 Uhr.”
 
-### Initial customer update (German)
+A specific next update is useful even without a repair estimate. The 07:15 time is illustrative, not an agreed real commitment.
 
-"Die Statusanzeige kann ihren Prüfendpunkt aktuell nicht erreichen. Ich prüfe, ob die Ursache im Deployment oder in der API liegt. Daraus lässt sich noch nicht ableiten, ob andere Dienste betroffen sind. Ich melde mich zum vereinbarten nächsten Update-Zeitpunkt mit dem aktuellen Stand."
+## Technical handoff
 
-Record observed impact and agree a specific next-update time in the role-play. An update deadline is not a repair promise.
+- Goal: support staff need a trustworthy status result and next action.
+- Environment: loopback preview, explicitly simulated; live Azure remains reachable.
+- Reproduce: start preview with LAB_HEALTH_MODE=unavailable; open portal and run check.
+- Expected: HTTP 200 and labelled simulated baseline.
+- Observed: portal HTTP 200, API HTTP 503, UI Degraded/Unavailable.
+- Evidence: E05, local-exercises.json, incident-03 failure/recovery timestamps.
+- Known recent change: deliberate local server fault injection.
+- Confirmed cause: local preview health mode; not an unknown Azure outage.
+- Resolution: restart local preview with operational mode; repeat original checks.
+- Owner in role-play: technical owner for correction; CSM for follow-up.
+- Workaround: page and runbooks remain accessible; do not interpret missing health as business failure.
+- No tokens, private data or unrelated customer records included.
 
-### Technical handoff
+## Progress update
 
-- Customer goal and affected task:
-- Environment and first observation (UTC):
-- Reproduction steps; actual vs expected result:
-- HTTP status / error / redacted logs:
-- Recent change, if known:
-- Checks completed and results:
-- Workaround and limitations:
-- Technical owner and specific question:
-- Communication owner and next update:
+“Die Ursache ist im Testaufbau eingegrenzt: Die API wurde für diese Übung absichtlich auf Fehlerantworten gestellt. Ich stelle den normalen Modus wieder her und prüfe danach dieselbe Anfrage sowie die Anzeige im Portal.”
 
-Never forward credentials or unrelated data. The CSM owns follow-up; the specialist owns technical diagnosis.
+## Closure
 
-### When you do not know
+“Die Statusprüfung im lokalen Test funktioniert wieder. Die API liefert HTTP 200 und das Portal zeigt die gekennzeichnete Simulationsantwort. Die öffentliche Azure-Demo war von der Übung nicht betroffen. Als Vorbeugung bleibt der Ablauf als wiederholbarer Test dokumentiert. Eine technische Wiederherstellung ist damit geprüft; ob eure Mitarbeitenden das Portal selbstständig nutzen können, testen wir separat.”
 
-"Ich möchte Ihnen eine verlässliche Antwort geben. Dafür kläre ich die technische Voraussetzung mit unserem zuständigen Team. Habe ich richtig verstanden, dass Sie [Ziel] unter [Anforderung] erreichen möchten? Ich halte die Frage und den nächsten Rückmeldetermin fest."
+## Access questions and escalation
 
-### Closure (fill after exercise)
+HTTP 403 alone does not prove an Azure RBAC error. Clarify whether the failure is in the public API, app login or Azure management plane. Check requested action, identity and scope before proposing a permission. Do not grant broad Owner rights just to clear an error.
 
-Record verified cause, actual correction, recovery check, remaining limitations, acceptance if obtained and prevention owner. One successful request does not prove permanent availability; a self-test does not establish customer acceptance.
+## What I say when I do not know
 
-## Proactive follow-up
-
-After repeated access questions, propose a short enablement session and checklist. Check whether the user can complete the task afterwards. Escalating a ticket alone does not establish adoption.
+“Ich möchte dir eine verlässliche Antwort geben. Ich halte fest, was du erreichen möchtest und was genau scheitert, und kläre die technische Voraussetzung mit dem zuständigen Team. Danach melde ich mich mit dem geprüften nächsten Schritt.”

@@ -1,0 +1,61 @@
+{
+  "executedBy": "Codex, at Luca request",
+  "base": "https://purple-meadow-08a08f610.3.azurestaticapps.net",
+  "limitation": "Point-in-time HTTP checks, not an uptime measurement or customer adoption assessment.",
+  "records": [
+    {
+      "at": "2026-10-14T05:01:44.324Z",
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html",
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), geolocation=(), microphone=()"
+      }
+    },
+    {
+      "at": "2026-10-14T05:01:44.379Z",
+      "path": "/styles.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "at": "2026-10-14T05:01:44.431Z",
+      "path": "/script.js",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "at": "2026-10-14T05:01:44.472Z",
+      "path": "/customer-success.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "at": "2026-10-14T05:01:44.503Z",
+      "path": "/health-model.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "at": "2026-10-14T05:01:45.673Z",
+      "path": "/api/health",
+      "status": 200,
+      "contentType": "application/json",
+      "body": {
+        "status": "operational",
+        "service": "azure-support-lab-api",
+        "version": "1.0.0",
+        "timestamp": "2026-10-14T05:01:47.003Z",
+        "checks": [
+          {
+            "name": "function-runtime",
+            "status": "operational"
+          }
+        ]
+      }
+    }
+  ]
+}

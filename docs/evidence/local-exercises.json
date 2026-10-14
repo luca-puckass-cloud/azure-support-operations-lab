@@ -1,0 +1,118 @@
+{
+  "executedBy": "Codex, at Luca request",
+  "startedWith": "2026-10-14T05:08:38.299Z",
+  "scope": "local exercises; no production outage or IAM change",
+  "records": [
+    {
+      "id": "baseline",
+      "at": "2026-10-14T05:08:38.299Z",
+      "mode": "operational",
+      "portalHttp": 200,
+      "apiHttp": 200,
+      "apiBody": {
+        "status": "operational",
+        "service": "azure-support-lab-api",
+        "version": "1.0.0",
+        "timestamp": "2026-10-14T05:08:38.299Z",
+        "checks": [
+          {
+            "name": "local-preview",
+            "status": "operational"
+          }
+        ]
+      },
+      "uiStatus": "Local simulation",
+      "uiApiState": "Simulated response",
+      "uiNote": "HTTP 200"
+    },
+    {
+      "id": "incident-03",
+      "environment": "local injected HTTP response",
+      "failure": {
+        "at": "2026-10-14T05:08:38.316Z",
+        "mode": "unavailable",
+        "portalHttp": 200,
+        "apiHttp": 503,
+        "apiBody": {
+          "status": "unavailable",
+          "simulated": true,
+          "message": "Local exercise injection; not Azure RBAC or an Azure outage."
+        },
+        "uiStatus": "Degraded",
+        "uiApiState": "Unavailable",
+        "uiNote": "HTTP 503: API check failed"
+      },
+      "recovery": {
+        "at": "2026-10-14T05:08:38.321Z",
+        "mode": "operational",
+        "portalHttp": 200,
+        "apiHttp": 200,
+        "apiBody": {
+          "status": "operational",
+          "service": "azure-support-lab-api",
+          "version": "1.0.0",
+          "timestamp": "2026-10-14T05:08:38.320Z",
+          "checks": [
+            {
+              "name": "local-preview",
+              "status": "operational"
+            }
+          ]
+        },
+        "uiStatus": "Local simulation",
+        "uiApiState": "Simulated response",
+        "uiNote": "HTTP 200"
+      }
+    },
+    {
+      "id": "incident-02",
+      "environment": "local injected HTTP response",
+      "failure": {
+        "at": "2026-10-14T05:08:38.337Z",
+        "mode": "access-denied",
+        "portalHttp": 200,
+        "apiHttp": 403,
+        "apiBody": {
+          "status": "access-denied",
+          "simulated": true,
+          "message": "Local exercise injection; not Azure RBAC or an Azure outage."
+        },
+        "uiStatus": "Degraded",
+        "uiApiState": "Unavailable",
+        "uiNote": "HTTP 403: access denied"
+      },
+      "recovery": {
+        "at": "2026-10-14T05:08:38.352Z",
+        "mode": "operational",
+        "portalHttp": 200,
+        "apiHttp": 200,
+        "apiBody": {
+          "status": "operational",
+          "service": "azure-support-lab-api",
+          "version": "1.0.0",
+          "timestamp": "2026-10-14T05:08:38.351Z",
+          "checks": [
+            {
+              "name": "local-preview",
+              "status": "operational"
+            }
+          ]
+        },
+        "uiStatus": "Local simulation",
+        "uiApiState": "Simulated response",
+        "uiNote": "HTTP 200"
+      }
+    },
+    {
+      "id": "incident-01",
+      "environment": "disposable local validation fixture",
+      "failureAt": "2026-10-14T05:08:38.407Z",
+      "failureExitCode": 1,
+      "symptom": "Invalid staticwebapp.config.json (plus deliberately incomplete fixture)",
+      "recoveryAt": "2026-10-14T05:08:38.448Z",
+      "recoveryExitCode": 0,
+      "recoveryOutput": "Validation passed: 26 required files checked.",
+      "limitation": "This exercises validation; no GitHub Actions or Azure deployment was deliberately failed."
+    }
+  ]
+}

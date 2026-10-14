@@ -16,7 +16,7 @@ function showAssessment(isExample) {
   document.querySelector('#customer-health-score').textContent = result.score === null ? 'No score yet' : `${result.score} / 100`;
   document.querySelector('#customer-health-context').textContent = isExample
     ? 'SIMULATED DAY 60: invented observations for learning, not measured customer outcomes. Prioritise enablement before expansion.'
-    : 'Customer evidence has not been collected. Missing data is unknown, not healthy.';
+    : 'Lab delivery and local recovery are documented. Independent adoption and real sponsor engagement remain unknown, so no customer-health score is claimed.';
   rows.replaceChildren();
   for (const { key, label, weight } of dimensions) {
     const row = document.createElement('tr');

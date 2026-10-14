@@ -1,171 +1,79 @@
 # Azure Customer Success Journey
 
-> **Current status:** Local portal and case-study materials prepared. Azure deployment and live incident exercises pending. The customer is fictional; no customer outcomes have been measured.
+> **Completed portfolio lab · 14 October 2026:** Azure Static Web Apps Free deployed, public portal and managed API verified, local failure/recovery exercises executed, mock customer communications and value review completed. CloudShop is fictional; independent customer adoption and commercial outcomes are not measured.
 
-A portfolio lab by Luca Puckaß connecting technical support with cloud customer success: understand the customer's goal, enable adoption, investigate blockers, communicate clearly and review value using evidence.
+A portfolio lab by Luca Puckaß connecting four years of technical customer support with Azure fundamentals and customer success. Luca completed the Azure portal setup with guidance; Codex assisted with implementation, automated checks and documentation. This is a learning project, not professional Azure administration or an employer engagement.
 
-The existing Azure Support Operations Lab remains the technical foundation. The repository name and API identifier are unchanged to preserve existing links and configuration. This is not an employer project, a production service or a claim of professional Azure administration experience.
+**[Open the live demo](https://purple-meadow-08a08f610.3.azurestaticapps.net/)** · [Live API](https://purple-meadow-08a08f610.3.azurestaticapps.net/api/health) · [Evidence register](docs/customer-success/evidence-register.md) · [German walkthrough](docs/customer-success/project-walkthrough-de.md)
 
-## Customer story and starting point
+## The customer problem
 
-**CloudShop** is a fictional small e-commerce business. Its support team needs one shared information and status portal. Real orders, payments, customer records and production shop migration are outside this pilot.
+CloudShop is a fictional e-commerce support team with scattered instructions and repeated status questions. The pilot provides one shared status/information portal. Orders, payments, a real customer database and production shop migration are outside scope.
 
-Three proposed success criteria: verify the deployed portal, complete a controlled incident with customer updates, and demonstrate a status/runbook/escalation walkthrough. The customer-health model is separate from the technical API check: HTTP 200 does not prove adoption or customer satisfaction.
-
-- **For Luca:** [Guided learning path (Deutsch)](docs/customer-success/learning-guide-de.md). Next: explain the brief, then deploy the existing portal together.
-- **For reviewers:** Start with the [customer brief](docs/customer-success/customer-brief.md) and [evidence register](docs/customer-success/evidence-register.md).
-- **For the application:** Run `npm run preview` and open `http://127.0.0.1:4173`. Both the local API simulation and synthetic customer example are labelled.
-
-| Customer success deliverable | Purpose | State |
-|---|---|---|
-| [Discovery brief](docs/customer-success/customer-brief.md) | Goals, owners, constraints | Fictional case prepared |
-| [30/60/90-day success plan](docs/customer-success/success-plan.md) | Milestones and acceptance criteria | Plan, not completed history |
-| [Customer health model](docs/customer-success/health-model.md) | Evidence, unknowns and next actions | Model with labelled synthetic example |
-| [Communication and escalation](docs/customer-success/customer-communications.md) | Updates, ownership and handoff | Templates, not messages sent |
-| [Value review](docs/customer-success/value-review.md) | Outcomes, risks, cost and recommendation | Six-part template; results pending |
-
-The 90-day plan models a lifecycle; it does not require waiting 90 days or pretending that those days occurred. Expansion must serve a demonstrated need. "Do not expand yet" is a valid recommendation.
-
-## Current capabilities
-
-| Capability | State |
+| Success criterion | Evidence and result |
 |---|---|
-| Responsive support operations portal | Implemented locally |
-| Browser-based health check with timeout and failure states | Implemented locally |
-| Managed Azure Functions health API | Implemented locally |
-| Automated repository validation and tests | Implemented locally |
-| Security headers for Azure Static Web Apps | Configured locally |
-| Free-tier Bicep resource definition | Implemented, not deployed |
-| Azure Static Web Apps deployment | Pending |
-| Application Insights monitoring | Optional; cost review pending |
-| Three controlled incident exercises | Prepared, not yet performed |
+| Verify deployed portal and endpoint | Live HTTP 200 checks, runtime response and headers; E02/E03 |
+| Recover from a controlled incident and communicate | Local injected HTTP 503/403 and failed validation, recovery records, German role-play updates; E05/E06 |
+| Complete status, runbook and escalation walkthrough | Assistant functional walkthrough; independent learner test remains open; E07 |
+
+## Completed deliverables
+
+- [Customer brief](docs/customer-success/customer-brief.md): goals, owners and boundaries.
+- [Success plan](docs/customer-success/success-plan.md): proposed 30/60/90-day phases, not elapsed customer history.
+- [Health model](docs/customer-success/health-model.md): partial lab evidence and an explicitly synthetic 57.5/100 example; no current overall score.
+- [Customer communication](docs/customer-success/customer-communications.md): initial update, technical handoff and closure, all role-play.
+- [Onboarding record](docs/customer-success/onboarding-record.md): functional walkthrough and independent acceptance tasks.
+- [Value review](docs/customer-success/value-review.md): results, unknowns and evidence-based next action.
+- [Incident reports](docs/troubleshooting-runbook.md): local experiments, not manufactured Azure outages.
+- [Evidence](docs/evidence/): timestamped machine-readable HTTP and exercise results.
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-    User[Browser] --> SWA[Azure Static Web Apps]
-    SWA --> Frontend[Static support portal]
+    User[Browser] --> SWA[Azure Static Web Apps Free]
+    SWA --> Frontend[HTML / CSS / JavaScript portal]
     Frontend -->|GET /api/health| API[Managed Azure Function]
-    Repo[GitHub] --> Validation[GitHub Actions validation]
-    Repo --> Deployment[Azure deployment workflow]
+    Repo[GitHub main] --> Validation[Structure / tests / local exercises]
+    Repo --> Deployment[GitHub Actions deployment]
     Deployment --> SWA
-    API -. optional telemetry .-> Monitor[Application Insights]
 ```
 
-The frontend treats a direct local file preview differently from an Azure failure. Locally it reports that the API is not running. After deployment, it calls `/api/health` with a five-second timeout and shows operational or degraded state based on the response.
+The health endpoint checks its own runtime. It does not check a shop, database, adoption or customer satisfaction. The Free plan is appropriate for this small learning pilot, not a promise of a production SLA.
 
-See [Architecture](docs/architecture.md) for responsibilities, request flow and trust boundaries.
+The cloud region for managed regional features is Central US as selected in the actual portal deployment; static assets are globally distributed. The resource group name ends in `weu` but its name does not determine the app's region. No real customer data is stored.
 
-## Repository structure
-
-```text
-.
-├── .github/workflows/validate.yml
-├── api/
-│   ├── src/functions/health.js
-│   ├── test/health.test.js
-│   ├── host.json
-│   └── package.json
-├── docs/
-│   ├── customer-success/
-│   ├── incidents/
-│   ├── architecture.md
-│   ├── deployment-guide.md
-│   ├── learning-notes.md
-│   ├── security-and-cost-checklist.md
-│   └── troubleshooting-runbook.md
-├── infrastructure/
-│   └── main.bicep
-├── scripts/validate-site.mjs
-├── tests/site.test.mjs
-└── website/
-    ├── index.html
-    ├── script.js
-    ├── customer-success.mjs
-    ├── health-model.mjs
-    ├── staticwebapp.config.json
-    └── styles.css
-```
-
-## Local validation
-
-The repository uses only Node's built-in test runner for the frontend checks. The Azure Functions API has one production dependency: `@azure/functions`.
+## Verification
 
 ```bash
 npm run validate
 npm test
+npm run exercise
+npm run verify:live
 cd api
-npm install
+npm ci
 npm test
 ```
 
-For a local browser preview with a simulated health endpoint, run `npm run preview`
-from the repository root and open `http://127.0.0.1:4173`.
+`exercise` uses only loopback servers and a disposable local validation fixture. It creates timestamped evidence; repeating it changes the latest record. It does not modify Azure IAM or break the live demo. `verify:live` reads the public URL and records point-in-time responses.
 
-The full frontend and API can later be run together with the Azure Static Web Apps CLI. A direct `index.html` preview remains useful for layout review but does not start the managed API.
+For a browser demo, run `npm run preview` at the repository root. The local API is labelled simulated. Set `LAB_HEALTH_MODE=unavailable` or `access-denied` for the local-only error exercise. See [German walkthrough](docs/customer-success/project-walkthrough-de.md).
 
-## Deployment plan
+## Costs and operational limits
 
-The first Azure deployment will use the portal so that the repository connection, generated workflow and secret storage are visible and auditable. Planned build settings:
+- Actual Azure resource: Static Web Apps **Free**, with managed API.
+- EUR 1 monthly subscription budget created. An alert is not a spending cap.
+- Initial October 2026 billing view: **No cost reported**; Actual cost and Forecast show `--`, not a measured EUR 0 invoice.
+- No VM, paid database, Front Door or Application Insights added.
+- Continuous monitoring is not enabled. The current approach uses manual checks and deployment logs.
+- Repeat cost analysis after usage data arrives. Do not claim recurring zero cost or ROI from this initial view.
 
-| Setting | Value |
-|---|---|
-| Plan | Free |
-| App location | `/website` |
-| API location | `/api` |
-| Output location | empty |
-| Deployment branch | `main` |
+## Learning-project boundaries
 
-See the complete [Deployment guide](docs/deployment-guide.md).
+The Azure deployment is real. HTTP 503/403 faults and validation failure were deliberately injected locally and verified by Codex. The access-denied exercise is **not** an Azure RBAC change. Customer messages are written role-play, not sent. The walkthrough is an assistant check, not proof that Luca or a customer can complete the tasks unaided.
 
-## Security and cost guardrails
+The Bicep template is provided as an optional reproducible definition and has not been deployed. An independent onboarding test, real customer engagement, quantified time savings and long-term uptime remain unmeasured. These are follow-up evidence, not fabricated results.
 
-- No secrets, customer data, employer screenshots or internal URLs are stored in the repository.
-- The health endpoint returns only service status, version, timestamp and its own runtime check.
-- Security headers restrict scripts, styles, network connections, framing and browser permissions.
-- The infrastructure template uses the Azure Static Web Apps Free SKU.
-- Virtual machines, paid databases, Front Door and Microsoft Sentinel are excluded.
-- Application Insights remains optional until its independent pricing has been reviewed and a low budget alert exists.
-- Budget alerts notify; they are not a guaranteed spending cap. Check current eligibility, settings and pricing before deployment. Preparing these files creates no cloud resources.
+## Interview demonstration
 
-See the [Security and cost checklist](docs/security-and-cost-checklist.md).
-
-## Troubleshooting practice
-
-Prepared exercises cover:
-
-1. a failed GitHub deployment;
-2. an Azure RBAC access-denied error;
-3. an unavailable managed API.
-
-The exercises are labelled as planned until they have actually been performed. Each final report will include impact, evidence, root cause, resolution, recovery verification and prevention.
-
-See the [Troubleshooting runbook](docs/troubleshooting-runbook.md).
-
-## Development approach
-
-AI assistance was used to scaffold and review parts of the frontend, API, infrastructure template and documentation. The project owner defined the requirements and is responsible for understanding the architecture, validating the implementation, deploying it safely and performing the troubleshooting exercises.
-
-This distinction is intentional: the portfolio targets cloud customer success with hands-on support practice, not professional software-development experience. Luca performs and explains the cloud exercises; results must match the evidence register. Simulated customer data must never be presented as measured customer outcomes.
-
-## Roadmap
-
-- [x] Create the public GitHub repository.
-- [x] Define project scope and cost guardrails.
-- [x] Build the local support operations portal.
-- [x] Implement the managed health API.
-- [x] Add automated validation and tests.
-- [x] Add the Free-tier Bicep definition.
-- [x] Prepare deployment, security and troubleshooting documentation.
-- [x] Prepare the fictional customer brief, success plan and review templates.
-- [x] Separate customer health from technical service health in the portal.
-- [ ] Luca validates the customer brief in his own words.
-- [x] Review and publish the Customer Success changes with Luca's approval.
-- [ ] Deploy to Azure Static Web Apps Free.
-- [ ] Verify the live portal and `/api/health` endpoint.
-- [ ] Decide whether to enable Application Insights.
-- [ ] Perform and document the three controlled incidents.
-- [ ] Complete an onboarding walkthrough, labelled self-test or independent test.
-- [ ] Review costs and available evidence; explain unknowns.
-- [ ] Complete the mock value review using only evidence-backed lab results.
+Open the portal, run a technical check, explain why customer health remains unknown, show one local incident report, and finish with the [value review](docs/customer-success/value-review.md). A guided explanation of every step is in the [German walkthrough](docs/customer-success/project-walkthrough-de.md).

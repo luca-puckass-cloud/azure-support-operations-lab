@@ -1,26 +1,26 @@
-# Incident 03 — Unavailable API
+# Incident 03 — Local unavailable API and recovery
 
-> Exercise status: Planned. Complete this report only after the controlled failure has been performed.
+> Executed by Codex on 14 October 2026 using a local injected HTTP 503. The public Azure demo was not interrupted.
 
-## Scenario
+## Impact and detection
+The local portal remained reachable (HTTP 200), but its status API returned HTTP 503. The real frontend controller displayed Degraded / Unavailable and “HTTP 503: API check failed”. This blocks the pilot status check, not any real shop, payment or order.
 
-Create a feature branch that temporarily breaks function discovery or the API location, then use the portal state, workflow output and monitoring evidence to locate the problem.
+## Diagnosis
+Test portal and API separately. The frontend is working; the failing component is the local API response. The recent deliberate change is the preview-server health mode. Because the fault was injected, its cause is known; do not pretend it was discovered through Azure logs.
 
-## Evidence to capture
+## Root cause and correction
+The preview server was started in unavailable mode. Replace it with operational mode and repeat the same checks. API HTTP 200 and the labelled local simulation baseline were restored.
 
-- Frontend degraded state
-- `/api/health` response or failure
-- Workflow configuration
-- Function discovery evidence
-- Recovery verification
+## Customer communication
+[Completed written role-play](../customer-success/customer-communications.md) includes initial update, technical handoff, progress and closure. No message was sent. A check failure does not justify saying the customer's shop is down.
 
-## Report
+## Prevention and remaining limitation
+Keep the local regression test: errors must be visible, buttons re-enabled, portal still readable and recovery detected. Show HTTP status in the interface so a support handoff has a useful symptom.
+Continuous cloud detection is not configured; the current live check is manual.
 
-For the CSM exercise, also complete the [customer communication and escalation record](../customer-success/customer-communications.md). Capture actual update times, a technical handoff and recovery verification. Mark messages as role-play, not communications with a real customer.
+## Evidence
+[Exercise record](../evidence/local-exercises.json), incident-03, contains actual UTC timestamps, status codes and UI text. Execution is automated and fast; no human support resolution-time improvement is claimed.
 
-- **Impact:** To be completed
-- **Detection:** To be completed
-- **Root cause:** To be completed
-- **Resolution:** To be completed
-- **Prevention:** To be completed
+## Repeat
+Run npm run exercise. For a visible browser demonstration use LAB_HEALTH_MODE=unavailable with npm run preview; then restart in operational mode and reload.
 

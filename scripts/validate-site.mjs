@@ -20,6 +20,10 @@ const requiredFiles = [
   "docs/deployment-guide.md",
   "docs/troubleshooting-runbook.md",
   "docs/security-and-cost-checklist.md",
+  "docs/customer-success/onboarding-record.md",
+  "docs/customer-success/project-walkthrough-de.md",
+  "scripts/run-exercises.mjs",
+  "scripts/verify-live.mjs",
   ...["customer-brief", "success-plan", "health-model", "evidence-register", "customer-communications", "value-review", "learning-guide-de"].map(name => `docs/customer-success/${name}.md`)
 ];
 

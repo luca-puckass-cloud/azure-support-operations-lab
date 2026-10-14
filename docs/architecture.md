@@ -4,7 +4,7 @@
 
 The Azure Customer Success Journey reuses this technical foundation. The fictional CloudShop case adds discovery, onboarding, adoption review and incident communication. Its health model runs entirely in the browser, separately from the API, with no CRM integration or customer database. Default ratings are unknown. The alternative day-60 dataset is explicitly synthetic and never updates the evidence register.
 
-The endpoint checks its own runtime, not customer adoption or complete business availability. Local preview uses a simulated endpoint. Azure deployment remains pending. See [customer brief](customer-success/customer-brief.md) and [health model](customer-success/health-model.md).
+The endpoint checks its own runtime, not customer adoption or complete business availability. Local preview uses a simulated endpoint. Azure deployment was verified on 14 October 2026. See [customer brief](customer-success/customer-brief.md) and [health model](customer-success/health-model.md).
 
 ## Objective
 
@@ -25,11 +25,11 @@ flowchart LR
 
 | Component | Responsibility | Current state |
 |---|---|---|
-| Static frontend | Presents service state, runbooks and project activity | Implemented locally |
-| Health API | Returns service name, version, status and timestamp | Implemented locally |
-| GitHub validation | Checks structure and runs automated tests | Implemented locally |
-| Azure Static Web Apps | Hosts the frontend and managed API | Deployment pending |
-| Application Insights | API request, failure and trace telemetry | Optional; cost review pending |
+| Static frontend | Presents service state, runbooks and project activity | Served by Azure |
+| Health API | Returns service name, version, status and timestamp | Live HTTP 200 verified |
+| GitHub validation | Checks structure and runs automated tests | Runs in CI; local exercises added |
+| Azure Static Web Apps | Hosts the frontend and managed API | Free SKU deployed |
+| Application Insights | API request, failure and trace telemetry | Not enabled; manual checks used |
 | Bicep template | Reproducible Free-tier resource definition | Implemented, not deployed |
 
 ## Request flow

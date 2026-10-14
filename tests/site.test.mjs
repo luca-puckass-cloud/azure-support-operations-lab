@@ -9,7 +9,8 @@ test("customer journey retains explicit evidence boundaries and separate health 
   for (const id of ['customer', 'journey', 'customer-health', 'show-example', 'show-project']) {
     assert.ok(html.includes(`id="${id}"`));
   }
-  assert.match(html, /Azure deployment and live exercises are pending/);
+  assert.match(html, /Live portal and API verified/);
+  assert.match(html, /independent customer adoption is not measured/);
   assert.match(html, /type="module" src="customer-success.mjs"/);
   assert.match(controller, /SIMULATED DAY 60/);
   assert.doesNotMatch(controller, /fetch\(|localStorage|#overall-status|#api-state/);

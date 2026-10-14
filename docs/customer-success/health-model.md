@@ -23,7 +23,7 @@ Thresholds are chosen for this exercise, not an industry standard. Interpret evi
 
 ## Current assessment
 
-All dimensions unknown; overall **Not assessed**. Preparing code and documents does not establish customer adoption, engagement or value. Azure deployment is pending.
+Overall **Not assessed**, with no numeric score. Live deployment and local recovery exercises are verified. Support, partial value and initial cost visibility have rating 1. Adoption and real sponsor engagement remain unknown. An assistant walkthrough does not establish independent use; no real customer has been engaged. This prevents an overall numeric score.
 
 ## Synthetic day-60 portal example
 

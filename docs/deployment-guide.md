@@ -1,6 +1,6 @@
 # Deployment guide
 
-> Status: Prepared procedure. Azure deployment has not yet been performed.
+> Status: Portal deployment completed by Luca with guidance on 14 October 2026. Live portal and managed API verified. This remains a repeatable deployment reference.
 
 ## Recommended first deployment
 
@@ -15,20 +15,23 @@ For the first deployment, use the Azure portal because it makes the GitHub conne
 
 ### 2. Create the Static Web App
 
-Use these planned values:
+Actual values used in the portal:
 
 | Setting | Value |
 |---|---|
 | Resource group | `rg-azure-support-lab-weu` |
-| Name | Globally unique name beginning with `swa-support-lab-` |
+| Name | `swa-support-lab-lucapuckass` |
 | Plan | Free |
 | Deployment source | GitHub |
 | Repository | `luca-puckass-cloud/azure-support-operations-lab` |
 | Branch | `main` |
 | Build preset | Custom |
-| App location | `/website` |
-| API location | `/api` |
-| Output location | leave empty |
+| App location | `./website` |
+| API location | `api` |
+| Output location | `.` |
+| Regional features | Central US; static distribution Global |
+
+The resource group name ends in `weu`, but this is a naming label, not the app's deployment region. The Bicep definition has not been deployed; compare actual regional settings before future use.
 
 Azure creates a deployment workflow and stores its deployment token as a GitHub Actions secret. The token must never be copied into a tracked file.
 

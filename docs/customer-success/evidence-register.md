@@ -1,36 +1,34 @@
-# Evidence register
+# Evidence register · 14 October 2026
 
-Tie each claim to an observation. **Prepared**, **locally tested**, **cloud-verified** and **simulated** are different states.
+Every statement distinguishes real Azure observations, local tests and fictional customer material.
 
-| ID | Claim / deliverable | State | Required evidence |
+| ID | Claim | State | Evidence |
 |---|---|---|---|
-| E01 | Portal implementation | Local implementation | Local tests and browser review, not Azure evidence |
-| E02 | Azure deployment | Pending | Deployment result, timestamp and redacted resource view |
-| E03 | Live endpoint responds | Pending | URL, timestamp, response and check scope |
-| E04 | Access control understood | Planned exercise | Role/scope explanation and redacted test |
-| E05 | Incident recovered | Planned exercise | Actual timeline, observations and root cause |
-| E06 | Customer updates | Templates prepared | Completed exercise messages; not sent to real company |
-| E07 | Onboarding works | Not assessed | Self-walkthrough or independent volunteer test, distinguished |
-| E08 | Costs reviewed | Pending | Actual period, spend, currency and reporting limitations |
-| E09 | Day-60 health | Simulated | Synthetic observations in health-model.md |
-| E10 | Customer value / QBR | Template prepared | Evidence references and explicit unknowns |
+| E01 | Portal implementation | Tested locally and served publicly | Site tests and [HTTP verification](../evidence/live-verification.json) |
+| E02 | Azure deployment | Cloud verified | Luca completed portal creation; generated GitHub workflow; public URL verified |
+| E03 | Live endpoint | Cloud verified, point-in-time | [HTTP response and UTC timestamps](../evidence/live-verification.json); operational runtime, HTTP 200 |
+| E04 | Access-denied handling | Local HTTP 403 simulation only | [Exercise record](../evidence/local-exercises.json); no Azure IAM role change or real RBAC resolution |
+| E05 | Failure and recovery | Locally executed | HTTP 503/403, controller state, valid recovery and failed validation in [records](../evidence/local-exercises.json) |
+| E06 | Customer updates | Completed written role-play | [Initial update, handoff, closure](customer-communications.md); never sent |
+| E07 | Onboarding | Assistant walkthrough | [Onboarding record](onboarding-record.md); independent learner acceptance remains open |
+| E08 | Cost review | Initial Azure billing observation | [Cost record](../evidence/cost-review.md); no cost reported, not a final invoice |
+| E09 | Day-60 health | Synthetic | [57.5/100 example](health-model.md); invented customer observations |
+| E10 | Value review | Completed mock review | [Review](value-review.md), with evidence references and unknowns |
 
-## Exercise record
+## Attribution
 
-- Actual date/time and environment:
-- Question / hypothesis:
-- What I did myself, and where AI helped:
-- Observation and safe evidence location:
-- What this establishes:
-- What this does NOT establish:
-- Next action / limitation:
+Luca: selected requirements, completed guided Azure subscription/budget/resource/GitHub connection, opened and tested live pages.
 
-## Privacy before publication
+Codex: code and docs, isolated working copy, automated HTTP/controller/validation tests, browser checks and written mock customer messages. No claim that Luca independently diagnosed these injected faults.
 
-Synthetic data only. Never commit tokens, connection strings, deployment secrets, subscription identifiers, personal emails from portal screens, real orders, employer-internal links or screenshots. Redact evidence before saving. No original internal job description belongs here.
+## What the evidence does not establish
 
-## Safe interview wording today
+Real customer adoption or satisfaction, completed 90-day history, production SLA, quantified support reduction, independent Azure administration or an Azure access-permission incident.
 
-"I built a local Azure-oriented customer success lab and prepared onboarding, a health model and an incident workflow. Cloud deployment and hands-on incident exercises are my next steps."
+## Publication boundaries
 
-Only say "deployed", "measured" or "resolved" once corresponding evidence exists.
+No secrets, subscription identifiers, tenant identifiers, personal billing screenshots, private email or real customer data are published. Evidence contains only the public demo URL, safe HTTP output, local test observations and redacted textual billing observations.
+
+## Accurate interview introduction
+
+“I deployed a small portal and managed API to Azure Static Web Apps Free with guidance. I used AI to help build the implementation and repeatable local troubleshooting exercises. I connected the lab to a fictional customer success case: goals, onboarding, communication, health assessment and a value review. The deployment is real; customer outcomes are simulated or still unmeasured.”

@@ -11,9 +11,9 @@
 ## Onboarding checklist
 
 - [ ] Luca explains and adjusts the discovery brief.
-- [ ] Agree lab scope, access owner and budget before provisioning.
-- [ ] Follow the [deployment guide](../deployment-guide.md), checking current portal settings.
-- [ ] Verify the public portal and API; capture evidence.
+- [x] Agree lab scope, access owner and budget before provisioning.
+- [x] Follow the [deployment guide](../deployment-guide.md), checking current portal settings.
+- [x] Verify the public portal and API; capture evidence.
 - [ ] Explain simulated, point-in-time and unconfigured checks.
 - [ ] Walk through one runbook and the escalation route.
 - [ ] Record questions and training needs; do not invent satisfaction feedback.
@@ -24,10 +24,11 @@
 | ID | Action | Owner | Due point | State |
 |---|---|---|---|---|
 | A01 | Explain scope in own words | Luca | Before Azure setup | Open |
-| A02 | Review access and cost guardrails | Luca, guided | Before provisioning | Open |
-| A03 | Deploy and capture endpoint evidence | Luca, guided | First Azure session | Pending |
-| A04 | Practise incident and updates | Luca | After verified deployment | Pending |
-| A05 | Review health and unknowns | Luca acting as CSM | After walkthrough | Pending |
+| A02 | Review access and cost guardrails | Luca, guided | Before provisioning | Completed; initial billing visibility limited |
+| A03 | Deploy and capture endpoint evidence | Luca guided setup; Codex verification | 14 Oct 2026 | Completed, E02/E03 |
+| A04 | Execute local fault tests and written updates | Codex | 14 Oct 2026 | Completed; Luca's independent repeat optional |
+| A05 | Review health and unknowns | Codex, written mock review | 14 Oct 2026 | Completed; Luca's explanation still to practise |
+| A06 | Independent onboarding acceptance | Luca + volunteer | Before claiming adoption | Open |
 
 Roles in this fictional log do not indicate a real customer's agreement.
 

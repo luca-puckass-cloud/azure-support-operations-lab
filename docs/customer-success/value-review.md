@@ -1,37 +1,45 @@
-# Value review - six-part QBR outline
+# CloudShop pilot value review · 14 October 2026
 
-> Mock review template. No quarter has elapsed and no customer outcome is asserted. Add verified lab results later; label role-play and synthetic observations separately.
+> Completed mock review. CloudShop is fictional. No real sponsor meeting, quarter, savings or customer acceptance is claimed.
 
-## 1. Customer objectives
+## 1. What the customer wants
 
-Restate the three criteria from the brief and the scope exclusions. Is the original problem still the priority?
+One place to check the pilot's technical status and find a useful next action during a problem. The business hypothesis is less avoidable support effort. This prototype does not retrieve order status or connect to a shop.
 
-## 2. Delivery and architecture
+## 2. What was delivered
 
-Explain portal, endpoint and owners without jargon. Current state: local implementation; Azure deployment pending. Use E02/E03 only after collecting evidence.
+Portal and managed API deployed on Azure Static Web Apps Free. Live HTTP/asset/header checks passed (E02/E03). GitHub publishes main through its Azure workflow. The API reports runtime state only.
 
-## 3. Adoption and enablement
+## 3. What the user can do
 
-What task was attempted, by whom, with what result? Distinguish self-walkthrough from independent testing. Record open questions; do not invent active-user counts or satisfaction ratings.
+The assistant walked through technical status, the health example and runbook/escalation paths (E07). Independent user ability has not been measured. A volunteer should repeat the acceptance tasks without help before adoption is rated.
 
-## 4. Support and risk
+## 4. How issues are handled
 
-Walk through a completed incident, if available: symptom, verified cause, correction, prevention. If using the synthetic day-60 example, label it and explain why 57.5/100 calls for enablement rather than expansion.
+Local HTTP 503 and 403 responses produced a degraded state, and restored HTTP 200 returned the local simulation to its healthy baseline (E04/E05). Invalid local configuration was caught by validation. Written initial, handoff and closure messages complete the communication exercise (E06). These are not Azure outages; no production downtime or MTTR claim is made.
 
-## 5. Cost and value
+Continuous detection is absent. A manual check is useful for a pilot but may miss an issue between checks. Monitoring should be chosen only after the required detection interval and cost constraints are agreed.
 
-Use actual reporting period and spend when available. Explain delays and unknowns. No ROI without a baseline, comparable measurement period and justified assumptions. Free-SKU selection is not billing evidence.
+## 5. Costs and benefit
 
-## 6. Decision and next 90 days
+Budget EUR 1/month configured. Initial October billing observation showed “No cost reported”; Actual cost and Forecast were unavailable (E08). Reporting lag remains a limitation. No final zero-cost invoice or ROI is asserted.
 
-Choose continue, adjust, pause or expand. Explain the evidence, owner and next checkpoint.
+A reusable troubleshooting/reporting structure is delivered. Reduced ticket volume and time saved remain hypotheses until baseline and comparable measurement exist. The synthetic 57.5 score is teaching material only (E09).
 
-**Prepared recommendation, not a customer decision:** Do not add paid services before deployment, enablement and cost visibility are validated. Consider monitoring if a specific detection gap justifies it and Luca approves the cost.
+## 6. Recommendation and owners
 
-## Completion checklist
+**Continue the small pilot without paid expansion.**
 
-- [ ] Every factual result references an evidence ID.
-- [ ] Simulated content is labelled.
-- [ ] Unmet goals and missing data are included.
-- [ ] Expansion serves a demonstrated need.
-- [ ] Luca can explain the review and decisions in his own words.
+| Next action | Proposed owner | Exit condition |
+|---|---|---|
+| Independent onboarding test | Luca + volunteer | Find status, choose runbook, identify technical owner unaided |
+| Recheck subscription costs | Luca | Current period visible after reporting catches up; compare with EUR 1 budget |
+| Define detection need | CSM + technical owner, role-play | Agree acceptable detection delay and data required |
+| Verify customer benefit | Support lead, role-play | Define baseline, follow-up period and comparable tasks before ROI |
+| Consider monitoring | Technical owner | Specific detection gap and explicit cost approval |
+
+No upsell is justified by a green endpoint alone. Current customer health remains **Not assessed**, because adoption and engagement are unknown.
+
+## Acceptance decision
+
+Technical pilot delivered; local troubleshooting and mock communication complete. Operational readiness demonstrated locally, not under production load. Independent customer adoption acceptance remains open.

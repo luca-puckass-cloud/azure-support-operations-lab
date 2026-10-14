@@ -78,9 +78,10 @@
     </section>
 
     <aside class="evidence-notice" aria-label="Evidence boundaries">
-      <strong>Prepared, not yet cloud-verified.</strong>
-      Azure deployment and live exercises are pending. CloudShop and its day-60 example
-      are fictional. Local code is real; customer outcomes are not claimed.
+      <strong>Azure deployment verified · 14 October 2026.</strong>
+      Live portal and API verified. Recovery exercises were executed locally with injected failures.
+      CloudShop and its day-60 example are fictional; independent customer adoption is not measured.
+      <a href="https://github.com/luca-puckass-cloud/azure-support-operations-lab/blob/main/docs/customer-success/value-review.md">Read the completed value review</a>
     </aside>
 
     <section id="customer" class="panel" aria-labelledby="customer-title">
@@ -163,21 +164,21 @@
         <article class="service-row">
           <div>
             <h3>Deployment pipeline</h3>
-            <p>Validation exists; Azure deployment pending</p>
+            <p>GitHub Actions publishes the portal and managed API</p>
           </div>
 
-          <span class="state state-planned">Prepared</span>
-          <span class="service-note">Not cloud-verified</span>
+          <span class="state state-operational">Deployed</span>
+          <span class="service-note">Azure verified · 14 Oct 2026</span>
         </article>
 
         <article class="service-row">
           <div>
             <h3>Azure monitoring</h3>
-            <p>Metrics, logs and alerting</p>
+            <p>EUR 1 monthly budget configured; no charges reported at review</p>
           </div>
 
-          <span class="state state-planned">Planned</span>
-          <span class="service-note">Not configured</span>
+          <span class="state state-planned">Manual checks</span>
+          <span class="service-note">Continuous telemetry not enabled</span>
         </article>
       </div>
       <p class="architecture-note">The endpoint checks its own runtime only. It does not verify a shop, database, customer adoption or an uptime SLA. Local preview uses a simulated endpoint.</p>
@@ -196,10 +197,11 @@
           <article>
             <span>01</span>
             <div>
-              <h3>Portal is unavailable</h3>
-              <p>Connectivity and application availability checks.</p>
+              <h3>API is unavailable</h3>
+              <p>Local HTTP 503 injection and recovery verification.</p>
+              <a href="https://github.com/luca-puckass-cloud/azure-support-operations-lab/blob/main/docs/incidents/incident-03-unavailable-api.md">Read incident report</a>
             </div>
-            <strong>Prepared</strong>
+            <strong>Local exercise</strong>
           </article>
 
           <article>
@@ -207,17 +209,19 @@
             <div>
               <h3>Access is denied</h3>
               <p>Identity, role assignment and RBAC investigation.</p>
+              <a href="https://github.com/luca-puckass-cloud/azure-support-operations-lab/blob/main/docs/incidents/incident-02-access-denied.md">Read incident report</a>
             </div>
-            <strong>Prepared</strong>
+            <strong>HTTP 403 simulation</strong>
           </article>
 
           <article>
             <span>03</span>
             <div>
-              <h3>Deployment has failed</h3>
-              <p>Workflow logs, configuration and recovery steps.</p>
+              <h3>Pre-deployment validation fails</h3>
+              <p>Invalid configuration caught before publication.</p>
+              <a href="https://github.com/luca-puckass-cloud/azure-support-operations-lab/blob/main/docs/incidents/incident-01-failed-deployment.md">Read incident report</a>
             </div>
-            <strong>Prepared</strong>
+            <strong>Local exercise</strong>
           </article>
         </div>
       </section>
@@ -245,17 +249,17 @@
             </div>
           </li>
 
-          <li class="current">
+          <li class="completed">
             <div>
-              <strong>Explain the customer brief</strong>
-              <span>Next: guided Azure setup and deployment</span>
+              <strong>Azure deployment verified</strong>
+              <span>Luca completed guided portal setup; live API returns HTTP 200</span>
             </div>
           </li>
 
-          <li>
+          <li class="completed">
             <div>
               <strong>Hands-on evidence and review</strong>
-              <span>Incidents, onboarding and cost review still pending</span>
+              <span>Local recovery tests, assistant walkthrough and mock value review documented</span>
             </div>
           </li>
         </ol>
@@ -270,11 +274,11 @@
       <div class="panel-heading">
         <div>
           <p class="section-label">Delivery path</p>
-          <h2 id="architecture-title">Planned architecture</h2>
+          <h2 id="architecture-title">Deployed architecture</h2>
         </div>
       </div>
 
-      <div class="architecture-flow" aria-label="Planned deployment architecture">
+      <div class="architecture-flow" aria-label="Deployed architecture">
         <span>Local code</span>
         <span aria-hidden="true">→</span>
         <span>GitHub</span>
@@ -287,7 +291,7 @@
       </div>
 
       <p class="architecture-note">
-        Planned Azure path. Monitoring is an optional separate extension, not
+        Verified Azure path. Monitoring is an optional separate extension, not
         part of the request chain. No database or real customer data is included.
       </p>
     </section>

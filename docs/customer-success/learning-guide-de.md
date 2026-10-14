@@ -2,7 +2,7 @@
 
 ## Was wir vorbereitet haben
 
-Ein lokales Portal und eine Fallstudie. Noch keine Azure-Berufserfahrung, echte Kundenbetreuung oder durchgeführte 90-Tage-Reise. Das ist die Grundlage deiner eigenen Übungen.
+Ein veröffentlichtes Azure-Portal und eine Fallstudie mit lokalen Fehlerübungen. Noch keine Azure-Berufserfahrung, echte Kundenbetreuung oder durchgeführte 90-Tage-Reise. Den fertigen Ablauf und deine nächsten eigenen Übungsschritte findest du in [project-walkthrough-de.md](project-walkthrough-de.md).
 
 Der Code darf KI-unterstützt sein. Du sollst Ziel, Aufbau, Grenzen und selbst durchgeführte Schritte erklären können, nicht jede JavaScript-Zeile auswendig lernen.
 

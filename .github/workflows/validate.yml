@@ -37,6 +37,9 @@ jobs:
       - name: Run site tests
         run: npm test
 
+      - name: Run isolated local failure and recovery exercises
+        run: npm run exercise
+
       - name: Run API tests
         run: npm test
         working-directory: api
